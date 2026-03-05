@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="zh-CN" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>企业展厅设计 | Portfolio</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Noto+Sans+SC:wght@300;400;500;700&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>tailwind.config={darkMode:"class",theme:{extend:{fontFamily:{sans:["Inter","Noto Sans SC","-apple-system","sans-serif"]},colors:{brand:{50:"#eef2ff",100:"#e0e7ff",200:"#c7d2fe",300:"#a5b4fc",400:"#818cf8",500:"#6366f1",600:"#4f46e5",700:"#4338ca",800:"#3730a3",900:"#312e81"}}}}}</script>
+  <script>if(localStorage.getItem('theme')==='dark')document.documentElement.classList.add('dark')</script>
+  <style>
+    body{font-family:Inter,"Noto Sans SC",-apple-system,sans-serif}
+    .hero-cover{position:relative;height:85vh;min-height:520px;overflow:hidden}
+    .hero-cover img{width:100%;height:100%;object-fit:cover;object-position:top}
+    .hero-cover::after{content:'';position:absolute;inset:0;background:linear-gradient(0deg,rgba(0,0,0,.85) 0%,rgba(0,0,0,.2) 40%,rgba(0,0,0,.05) 100%)}
+    .hero-info{position:absolute;bottom:0;left:0;right:0;z-index:2;padding:0 clamp(20px,5vw,80px) 48px}
+    .meta-grid{display:grid;grid-template-columns:repeat(3,auto);gap:32px;width:fit-content}
+    .meta-item p:first-child{font-size:10px;text-transform:uppercase;letter-spacing:3px;color:rgba(255,255,255,.45);margin-bottom:6px}
+    .meta-item p:last-child{font-size:14px;font-weight:500;color:rgba(255,255,255,.85)}
+    .divider{width:40px;height:1px;background:linear-gradient(90deg,#818cf8,#06b6d4);margin:20px 0}
+    [data-reveal]{opacity:0;transform:translateY(24px);transition:opacity .7s cubic-bezier(.4,0,.2,1),transform .7s cubic-bezier(.4,0,.2,1)}
+    [data-reveal].on{opacity:1;transform:none}
+    .img-wrap{border-radius:12px;overflow:hidden;box-shadow:0 20px 60px rgba(0,0,0,.12)}
+    .dark .img-wrap{box-shadow:0 20px 60px rgba(0,0,0,.4)}
+    @media(max-width:640px){.meta-grid{grid-template-columns:1fr;gap:16px}.hero-cover{height:60vh;min-height:360px}}
+  </style>
+</head>
+<body class="bg-white text-slate-900 dark:bg-slate-950 dark:text-slate-100">
+
+  <!-- Fixed Back -->
+  <a href="../index.html#portfolio" class="fixed left-5 top-5 z-50 flex items-center gap-1.5 rounded-full border border-white/15 bg-black/30 px-4 py-2 text-xs font-medium text-white backdrop-blur-md transition hover:bg-black/50">
+    <svg class="h-3.5 w-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>返回
+  </a>
+
+  <!-- Page Counter -->
+  <span class="fixed right-5 top-5 z-50 rounded-full border border-white/15 bg-black/30 px-4 py-2 text-xs font-semibold tracking-widest text-white/60 backdrop-blur-md">02 / 06</span>
+
+  <!-- Hero Cover -->
+  <section class="hero-cover">
+    <img src="../assets/企业展厅设计.png" alt="企业展厅设计">
+    <div class="hero-info">
+      <div class="mb-4 flex flex-wrap gap-2">
+        <span class="rounded-full border border-white/20 bg-white/10 px-3 py-1 text-[11px] font-medium text-white/80 backdrop-blur-sm">VR/AR</span>
+        <span class="rounded-full border border-white/20 bg-white/10 px-3 py-1 text-[11px] font-medium text-white/80 backdrop-blur-sm">数字展厅</span>
+        <span class="rounded-full border border-white/20 bg-white/10 px-3 py-1 text-[11px] font-medium text-white/80 backdrop-blur-sm">3D 交互</span>
+      </div>
+      <h1 class="text-3xl font-bold tracking-tight text-white sm:text-5xl lg:text-6xl">企业展厅设计</h1>
+      <div class="divider"></div>
+      <div class="meta-grid">
+        <div class="meta-item"><p>角色</p><p>UI 设计师</p></div>
+        <div class="meta-item"><p>时间</p><p>2024.09 — 2025.01</p></div>
+        <div class="meta-item"><p>公司</p><p>数字展厅项目</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Content -->
+  <main class="mx-auto max-w-5xl px-5 py-20 sm:px-8 lg:py-28">
+
+    <!-- Description -->
+    <section data-reveal class="mx-auto mb-20 max-w-3xl">
+      <p class="text-xs font-semibold uppercase tracking-[4px] text-brand-500">项目概述</p>
+      <h2 class="mt-4 text-2xl font-bold leading-snug sm:text-3xl">聚焦文化遗产数字化<br>打造沉浸式数字文化体验</h2>
+      <p class="mt-6 text-base leading-loose text-slate-600 dark:text-slate-400 sm:text-lg">
+        主导 VR/AR、展厅大屏等多终端 UI 全流程设计。运用 AI 工具高效输出视觉方案，结合 3D 交互、手势操作与界面规范。设计 VR 古建修复项目全流程 UI 界面，优化 3D 界面交互逻辑，用户平均体验时长提升 35%。主导 200m² 智能财经展厅动态与静态墙面视觉设计。
+      </p>
+    </section>
+
+    <!-- Full Image -->
+    <section data-reveal>
+      <div class="img-wrap">
+        <img src="../assets/企业展厅设计.png" alt="企业展厅设计完整作品" class="w-full" loading="lazy">
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Next Project -->
+  <footer class="border-t border-slate-200 dark:border-slate-800">
+    <a href="samsung.html" class="group flex items-center justify-between px-5 py-10 transition hover:bg-slate-50 dark:hover:bg-slate-900/50 sm:px-8">
+      <div>
+        <p class="text-xs font-semibold uppercase tracking-[4px] text-slate-400">下一个项目</p>
+        <p class="mt-2 text-xl font-bold sm:text-2xl">三星智慧门店管理平台</p>
+      </div>
+      <svg class="h-6 w-6 text-slate-400 transition group-hover:translate-x-1 group-hover:text-brand-500" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+    </a>
+  </footer>
+
+  <script>
+    const io = new IntersectionObserver((entries) => {
+      entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('on'); io.unobserve(e.target); }});
+    }, { threshold: 0.15 });
+    document.querySelectorAll('[data-reveal]').forEach(el => io.observe(el));
+  </script>
+</body>
+</html>

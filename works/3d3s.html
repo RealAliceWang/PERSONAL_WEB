@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="zh-CN" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>3D3S 工业结构设计软件 | Portfolio</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Noto+Sans+SC:wght@300;400;500;700&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>tailwind.config={darkMode:"class",theme:{extend:{fontFamily:{sans:["Inter","Noto Sans SC","-apple-system","sans-serif"]},colors:{brand:{50:"#eef2ff",100:"#e0e7ff",200:"#c7d2fe",300:"#a5b4fc",400:"#818cf8",500:"#6366f1",600:"#4f46e5",700:"#4338ca",800:"#3730a3",900:"#312e81"}}}}}</script>
+  <script>if(localStorage.getItem('theme')==='dark')document.documentElement.classList.add('dark')</script>
+  <style>
+    body{font-family:Inter,"Noto Sans SC",-apple-system,sans-serif}
+    .hero-cover{position:relative;height:85vh;min-height:520px;overflow:hidden}
+    .hero-cover img{width:100%;height:100%;object-fit:cover;object-position:top}
+    .hero-cover::after{content:'';position:absolute;inset:0;background:linear-gradient(0deg,rgba(0,0,0,.85) 0%,rgba(0,0,0,.2) 40%,rgba(0,0,0,.05) 100%)}
+    .hero-info{position:absolute;bottom:0;left:0;right:0;z-index:2;padding:0 clamp(20px,5vw,80px) 48px}
+    .meta-grid{display:grid;grid-template-columns:repeat(3,auto);gap:32px;width:fit-content}
+    .meta-item p:first-child{font-size:10px;text-transform:uppercase;letter-spacing:3px;color:rgba(255,255,255,.45);margin-bottom:6px}
+    .meta-item p:last-child{font-size:14px;font-weight:500;color:rgba(255,255,255,.85)}
+    .divider{width:40px;height:1px;background:linear-gradient(90deg,#818cf8,#06b6d4);margin:20px 0}
+    [data-reveal]{opacity:0;transform:translateY(24px);transition:opacity .7s cubic-bezier(.4,0,.2,1),transform .7s cubic-bezier(.4,0,.2,1)}
+    [data-reveal].on{opacity:1;transform:none}
+    .img-wrap{border-radius:12px;overflow:hidden;box-shadow:0 20px 60px rgba(0,0,0,.12)}
+    .dark .img-wrap{box-shadow:0 20px 60px rgba(0,0,0,.4)}
+
+    .keyword-icon{
+      width:44px;height:44px;border-radius:12px;
+      display:flex;align-items:center;justify-content:center;
+      background:linear-gradient(135deg,rgba(99,102,241,.08),rgba(6,182,212,.08));
+      transition:all .3s ease;
+    }
+    .keyword-card:hover .keyword-icon{
+      background:linear-gradient(135deg,rgba(99,102,241,.15),rgba(6,182,212,.15));
+      transform:scale(1.08);
+    }
+    .keyword-icon svg{width:22px;height:22px}
+
+    @media(max-width:640px){.meta-grid{grid-template-columns:1fr;gap:16px}.hero-cover{height:60vh;min-height:360px}}
+  </style>
+</head>
+<body class="bg-white text-slate-900 dark:bg-slate-950 dark:text-slate-100">
+
+  <!-- Fixed Back -->
+  <a href="../index.html#portfolio" class="fixed left-5 top-5 z-50 flex items-center gap-1.5 rounded-full border border-white/15 bg-black/30 px-4 py-2 text-xs font-medium text-white backdrop-blur-md transition hover:bg-black/50">
+    <svg class="h-3.5 w-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>返回
+  </a>
+
+  <!-- Page Counter -->
+  <span class="fixed right-5 top-5 z-50 rounded-full border border-white/15 bg-black/30 px-4 py-2 text-xs font-semibold tracking-widest text-white/60 backdrop-blur-md">01 / 06</span>
+
+  <!-- Hero Cover -->
+  <section class="hero-cover">
+    <img src="../assets/无影云化办公客户端.png" alt="3D3S 工业结构设计软件">
+    <div class="hero-info">
+      <div class="mb-4 flex flex-wrap gap-2">
+        <span class="rounded-full border border-white/20 bg-white/10 px-3 py-1 text-[11px] font-medium text-white/80 backdrop-blur-sm">工业软件</span>
+        <span class="rounded-full border border-white/20 bg-white/10 px-3 py-1 text-[11px] font-medium text-white/80 backdrop-blur-sm">品牌设计</span>
+        <span class="rounded-full border border-white/20 bg-white/10 px-3 py-1 text-[11px] font-medium text-white/80 backdrop-blur-sm">AI 辅助</span>
+      </div>
+      <h1 class="text-3xl font-bold tracking-tight text-white sm:text-5xl lg:text-6xl">3D3S 工业结构设计软件</h1>
+      <div class="divider"></div>
+      <div class="meta-grid">
+        <div class="meta-item"><p>角色</p><p>UI 设计师</p></div>
+        <div class="meta-item"><p>时间</p><p>2025.03 — 至今</p></div>
+        <div class="meta-item"><p>公司</p><p>3D3S 工业软件</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Content -->
+  <main class="mx-auto max-w-5xl px-5 py-20 sm:px-8 lg:py-28">
+
+    <!-- Description -->
+    <section data-reveal class="mx-auto mb-20 max-w-3xl">
+      <p class="text-xs font-semibold uppercase tracking-[4px] text-brand-500">项目概述</p>
+      <h2 class="mt-4 text-2xl font-bold leading-snug sm:text-3xl">主导 3D3S 2026 主界面改版<br>重构导航架构与品牌视觉</h2>
+      <p class="mt-6 text-base leading-loose text-slate-600 dark:text-slate-400 sm:text-lg">
+        负责 3D3S 工业软件、品牌物料、新媒体运营三大核心板块 UI/视觉设计全流程工作，精准贴合业务需求，统一品牌视觉调性。主导 3D3S 2026 工业结构设计软件主界面改版，重构导航架构，结合 AI 完成启动页、功能模块图标设计。
+      </p>
+    </section>
+
+    <!-- Design Keywords Section -->
+    <section data-reveal class="mb-20">
+      <div class="relative mb-10">
+        <span class="pointer-events-none absolute -top-6 left-0 select-none text-[64px] font-black leading-none tracking-tight text-slate-100 dark:text-slate-800/50 sm:text-[80px]">Keywords</span>
+        <div class="relative">
+          <p class="text-xs font-semibold uppercase tracking-[4px] text-brand-500">DESIGN KEYWORDS</p>
+          <h2 class="mt-3 text-2xl font-bold sm:text-3xl">设计关键词</h2>
+          <p class="mt-2 text-sm text-slate-500 dark:text-slate-400">围绕用户核心诉求，提炼设计原则</p>
+        </div>
+      </div>
+
+      <div class="grid gap-5 lg:grid-cols-[280px_1fr]">
+        <!-- Core Principle Card -->
+        <div class="flex flex-col justify-center rounded-2xl bg-slate-900 px-8 py-10 text-white dark:bg-slate-800">
+          <p class="text-[10px] font-medium uppercase tracking-[4px] text-slate-400">Core Principle</p>
+          <h3 class="mt-5 text-4xl font-black leading-tight sm:text-5xl">高效</h3>
+          <p class="mt-4 text-sm leading-relaxed text-slate-400">一切设计决策的核心标准——让工程师专注于结构设计本身，而非界面操作。</p>
+        </div>
+
+        <!-- 4 Keyword Cards -->
+        <div class="grid grid-cols-2 gap-4">
+          <!-- Professional -->
+          <div class="keyword-card group rounded-xl border border-slate-200 bg-white p-6 transition hover:-translate-y-0.5 hover:shadow-lg dark:border-slate-700 dark:bg-slate-900">
+            <div class="keyword-icon mb-4">
+              <svg viewBox="0 0 24 24" fill="none" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                <defs><linearGradient id="kw-g1" x1="2" y1="2" x2="22" y2="22"><stop stop-color="#6366f1"/><stop offset="1" stop-color="#06b6d4"/></linearGradient></defs>
+                <path d="M12 2L2 7l10 5 10-5-10-5z" stroke="url(#kw-g1)"/>
+                <path d="M2 17l10 5 10-5" stroke="url(#kw-g1)"/>
+                <path d="M2 12l10 5 10-5" stroke="url(#kw-g1)"/>
+              </svg>
+            </div>
+            <h4 class="text-base font-bold">专业</h4>
+            <p class="mt-2 text-[13px] leading-relaxed text-slate-500 dark:text-slate-400">保留结构工程师所需的全部参数精度与计算深度，界面改版不降低专业能力边界。</p>
+          </div>
+
+          <!-- Clear -->
+          <div class="keyword-card group rounded-xl border border-slate-200 bg-white p-6 transition hover:-translate-y-0.5 hover:shadow-lg dark:border-slate-700 dark:bg-slate-900">
+            <div class="keyword-icon mb-4">
+              <svg viewBox="0 0 24 24" fill="none" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                <defs><linearGradient id="kw-g2" x1="2" y1="2" x2="22" y2="22"><stop stop-color="#6366f1"/><stop offset="1" stop-color="#06b6d4"/></linearGradient></defs>
+                <rect x="3" y="3" width="7" height="7" rx="1" stroke="url(#kw-g2)"/>
+                <rect x="14" y="3" width="7" height="7" rx="1" stroke="url(#kw-g2)"/>
+                <rect x="3" y="14" width="7" height="7" rx="1" stroke="url(#kw-g2)"/>
+                <rect x="14" y="14" width="7" height="7" rx="1" stroke="url(#kw-g2)"/>
+              </svg>
+            </div>
+            <h4 class="text-base font-bold">清晰</h4>
+            <p class="mt-2 text-[13px] leading-relaxed text-slate-500 dark:text-slate-400">重构导航层级与功能分组，25+ 模块入口清晰可寻，3D 视图信息一眼可辨。</p>
+          </div>
+
+          <!-- Consistent -->
+          <div class="keyword-card group rounded-xl border border-slate-200 bg-white p-6 transition hover:-translate-y-0.5 hover:shadow-lg dark:border-slate-700 dark:bg-slate-900">
+            <div class="keyword-icon mb-4">
+              <svg viewBox="0 0 24 24" fill="none" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                <defs><linearGradient id="kw-g3" x1="2" y1="2" x2="22" y2="22"><stop stop-color="#6366f1"/><stop offset="1" stop-color="#06b6d4"/></linearGradient></defs>
+                <path d="M7.5 4.5h9M4.5 7.5v9M19.5 7.5v9M7.5 19.5h9" stroke="url(#kw-g3)"/>
+                <circle cx="5" cy="5" r="2.5" stroke="url(#kw-g3)"/>
+                <circle cx="19" cy="5" r="2.5" stroke="url(#kw-g3)"/>
+                <circle cx="5" cy="19" r="2.5" stroke="url(#kw-g3)"/>
+                <circle cx="19" cy="19" r="2.5" stroke="url(#kw-g3)"/>
+              </svg>
+            </div>
+            <h4 class="text-base font-bold">一致</h4>
+            <p class="mt-2 text-[13px] leading-relaxed text-slate-500 dark:text-slate-400">统一色彩、图标、间距与交互范式，所有模块共享同一套设计语言，消除割裂感。</p>
+          </div>
+
+          <!-- Concise -->
+          <div class="keyword-card group rounded-xl border border-slate-200 bg-white p-6 transition hover:-translate-y-0.5 hover:shadow-lg dark:border-slate-700 dark:bg-slate-900">
+            <div class="keyword-icon mb-4">
+              <svg viewBox="0 0 24 24" fill="none" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                <defs><linearGradient id="kw-g4" x1="2" y1="2" x2="22" y2="22"><stop stop-color="#6366f1"/><stop offset="1" stop-color="#06b6d4"/></linearGradient></defs>
+                <path d="M4 6h16" stroke="url(#kw-g4)"/>
+                <path d="M6 10h12" stroke="url(#kw-g4)"/>
+                <path d="M8 14h8" stroke="url(#kw-g4)"/>
+                <path d="M10 18h4" stroke="url(#kw-g4)"/>
+              </svg>
+            </div>
+            <h4 class="text-base font-bold">简洁</h4>
+            <p class="mt-2 text-[13px] leading-relaxed text-slate-500 dark:text-slate-400">精简工具栏层级，合并低频功能，减少视觉噪音，让工程师聚焦当前核心任务。</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Full Image -->
+    <section data-reveal>
+      <div class="img-wrap">
+        <img src="../assets/无影云化办公客户端.png" alt="3D3S 工业软件完整作品" class="w-full" loading="lazy">
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Next Project -->
+  <footer class="border-t border-slate-200 dark:border-slate-800">
+    <a href="xinxianghui.html" class="group flex items-center justify-between px-5 py-10 transition hover:bg-slate-50 dark:hover:bg-slate-900/50 sm:px-8">
+      <div>
+        <p class="text-xs font-semibold uppercase tracking-[4px] text-slate-400">下一个项目</p>
+        <p class="mt-2 text-xl font-bold sm:text-2xl">兴享惠金融小程序</p>
+      </div>
+      <svg class="h-6 w-6 text-slate-400 transition group-hover:translate-x-1 group-hover:text-brand-500" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+    </a>
+  </footer>
+
+  <script>
+    const io = new IntersectionObserver((entries) => {
+      entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('on'); io.unobserve(e.target); }});
+    }, { threshold: 0.15 });
+    document.querySelectorAll('[data-reveal]').forEach(el => io.observe(el));
+  </script>
+</body>
+</html>
