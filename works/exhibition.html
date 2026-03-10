@@ -10,10 +10,6 @@
   <script>if(localStorage.getItem('theme')==='dark')document.documentElement.classList.add('dark')</script>
   <style>
     body{font-family:Inter,"Noto Sans SC",-apple-system,sans-serif}
-    .hero-cover{position:relative;height:70vh;min-height:420px;overflow:hidden}
-    .hero-cover img{width:100%;height:100%;object-fit:cover;object-position:top}
-    .hero-cover::after{content:'';position:absolute;inset:0;background:linear-gradient(0deg,rgba(0,0,0,.7) 0%,rgba(0,0,0,.15) 35%,rgba(0,0,0,.02) 100%)}
-    .hero-info{position:absolute;bottom:0;left:0;right:0;z-index:2;padding:0 clamp(20px,5vw,80px) 40px}
     .gallery-img{border-radius:12px;overflow:hidden;cursor:zoom-in;transition:transform .35s cubic-bezier(.2,.8,.2,1),box-shadow .35s ease}
     .gallery-img:hover{transform:translateY(-4px);box-shadow:0 24px 60px rgba(0,0,0,.15)}
     .dark .gallery-img:hover{box-shadow:0 24px 60px rgba(0,0,0,.5)}
@@ -24,34 +20,16 @@
     .lightbox.active img{transform:scale(1)}
     .lightbox-close{position:absolute;top:20px;right:20px;width:40px;height:40px;border-radius:50%;border:1px solid rgba(255,255,255,.15);background:rgba(255,255,255,.08);color:#fff;display:flex;align-items:center;justify-content:center;cursor:pointer;transition:background .2s}
     .lightbox-close:hover{background:rgba(255,255,255,.15)}
-    [data-reveal]{opacity:0;transform:translateY(24px);transition:opacity .7s cubic-bezier(.4,0,.2,1),transform .7s cubic-bezier(.4,0,.2,1)}
-    [data-reveal].on{opacity:1;transform:none}
-    @media(max-width:640px){.hero-cover{height:50vh;min-height:300px}}
   </style>
 </head>
 <body class="bg-white text-slate-900 dark:bg-[#050508] dark:text-slate-100">
-  <a href="../index.html#portfolio" class="fixed left-5 top-5 z-50 flex items-center gap-1.5 rounded-full border border-white/15 bg-black/30 px-4 py-2 text-xs font-medium text-white backdrop-blur-md transition hover:bg-black/50">
+  <a href="../index.html#portfolio" class="fixed left-5 top-5 z-50 flex items-center gap-1.5 rounded-full border border-slate-200 bg-white/80 px-4 py-2 text-xs font-medium text-slate-700 backdrop-blur-md transition hover:bg-white dark:border-white/15 dark:bg-black/30 dark:text-white dark:hover:bg-black/50">
     <svg class="h-3.5 w-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>返回
   </a>
-  <span class="fixed right-5 top-5 z-50 rounded-full border border-white/15 bg-black/30 px-4 py-2 text-xs font-semibold tracking-widest text-white/60 backdrop-blur-md">07 / 08</span>
 
-  <section class="hero-cover">
-    <img src="../assets/企业展厅设计.jpg" alt="企业展厅设计">
-    <div class="hero-info">
-      <div class="mb-3 flex flex-wrap gap-2">
-        <span class="rounded-full border border-white/20 bg-white/10 px-3 py-1 text-[11px] font-medium text-white/80 backdrop-blur-sm">VR/AR</span>
-        <span class="rounded-full border border-white/20 bg-white/10 px-3 py-1 text-[11px] font-medium text-white/80 backdrop-blur-sm">数字展厅</span>
-        <span class="rounded-full border border-white/20 bg-white/10 px-3 py-1 text-[11px] font-medium text-white/80 backdrop-blur-sm">3D 交互</span>
-      </div>
-      <h1 class="text-3xl font-bold tracking-tight text-white sm:text-5xl">企业展厅设计</h1>
-    </div>
-  </section>
-
-  <main class="mx-auto max-w-6xl px-5 py-16 sm:px-8 lg:py-24">
-    <div class="space-y-8">
-      <div class="gallery-img" onclick="openLightbox(this)">
-        <img src="../assets/企业展厅设计.jpg" alt="企业展厅设计">
-      </div>
+  <main class="mx-auto max-w-6xl px-5 pt-20 pb-16 sm:px-8">
+    <div class="gallery-img" onclick="openLightbox(this)">
+      <img src="../assets/企业展厅设计.jpg" alt="企业展厅设计">
     </div>
   </main>
 
@@ -73,8 +51,6 @@
   </div>
 
   <script>
-    const io=new IntersectionObserver(e=>{e.forEach(e=>{e.isIntersecting&&(e.target.classList.add('on'),io.unobserve(e.target))})},{threshold:.1});
-    document.querySelectorAll('[data-reveal]').forEach(el=>io.observe(el));
     function openLightbox(el){const img=el.querySelector('img');if(!img)return;document.getElementById('lightboxImg').src=img.src;document.getElementById('lightbox').classList.add('active');document.body.style.overflow='hidden'}
     function closeLightbox(e){if(e.target.tagName==='IMG'&&e.target.id==='lightboxImg')return;document.getElementById('lightbox').classList.remove('active');document.body.style.overflow=''}
     document.addEventListener('keydown',e=>{if(e.key==='Escape')closeLightbox(e)});

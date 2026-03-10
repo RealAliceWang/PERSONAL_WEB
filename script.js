@@ -113,33 +113,6 @@ themeToggle?.addEventListener("click", () => {
   });
 })();
 
-// Portfolio hover image preview (desktop only)
-(function initImagePreview() {
-  if (!window.matchMedia("(pointer: fine)").matches) return;
-
-  const preview = document.createElement("div");
-  preview.className = "cursor-preview";
-  document.body.appendChild(preview);
-
-  document.querySelectorAll(".portfolio-item").forEach((item) => {
-    const img = item.querySelector("img");
-    if (!img) return;
-
-    item.addEventListener("mouseenter", () => {
-      preview.style.backgroundImage = `url(${img.src})`;
-      preview.classList.add("visible");
-    });
-
-    item.addEventListener("mousemove", (e) => {
-      preview.style.left = e.clientX + "px";
-      preview.style.top = e.clientY + "px";
-    });
-
-    item.addEventListener("mouseleave", () => {
-      preview.classList.remove("visible");
-    });
-  });
-})();
 
 // Lenis smooth scroll
 (function initLenis() {
