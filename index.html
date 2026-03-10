@@ -30,7 +30,12 @@
   <link rel="stylesheet" href="styles.css">
 </head>
 <body class="bg-slate-50 text-slate-900 transition-colors duration-300 dark:bg-slate-950 dark:text-slate-100">
-  <canvas id="particles"></canvas>
+  <div class="aurora" aria-hidden="true">
+    <div class="aurora-blob"></div>
+    <div class="aurora-blob"></div>
+    <div class="aurora-blob"></div>
+  </div>
+  <div class="mouse-spotlight" id="mouseSpotlight"></div>
 
   <div class="relative z-10">
     <nav id="nav" class="fixed inset-x-0 top-0 z-50 transition-all duration-300">
@@ -69,19 +74,19 @@
           <p data-animate class="inline-flex rounded-full border border-brand-200 bg-brand-50 px-4 py-2 text-sm font-medium text-brand-700 dark:border-brand-500/40 dark:bg-brand-500/15 dark:text-brand-100">
             UI / 视觉设计师
           </p>
-          <h1 data-animate data-delay="80" class="mt-6 text-4xl font-black leading-tight sm:text-6xl lg:text-7xl">
-            <span class="block">创造极致</span>
-            <span class="gradient-text block">数字体验</span>
+          <h1 class="mt-6 text-4xl font-black leading-tight sm:text-6xl lg:text-7xl">
+            <span class="hero-line-reveal">创造极致</span>
+            <span class="hero-line-reveal gradient-text">数字体验</span>
           </h1>
-          <p data-animate data-delay="160" class="mx-auto mt-6 max-w-2xl text-base text-slate-600 dark:text-slate-300">
+          <p data-animate data-delay="300" class="mx-auto mt-6 max-w-2xl text-base text-slate-600 dark:text-slate-300">
             13+ 年设计经验 · 跨领域全流程设计能力<br>
             工业软件 / VR交互 / 数据可视化 / 移动端产品
           </p>
-          <div data-animate data-delay="240" class="mt-8 flex flex-wrap items-center justify-center gap-4">
-            <a href="#experience" class="rounded-full bg-brand-600 px-6 py-3 text-sm font-semibold text-white shadow-lg shadow-brand-500/30 transition hover:bg-brand-700">查看经历</a>
-            <a href="#contact" class="rounded-full border border-slate-300 px-6 py-3 text-sm font-semibold text-slate-700 transition hover:border-slate-400 dark:border-slate-600 dark:text-slate-200 dark:hover:border-slate-500">联系我</a>
+          <div data-animate data-delay="450" class="mt-8 flex flex-wrap items-center justify-center gap-4">
+            <a href="#experience" class="magnetic rounded-full bg-brand-600 px-6 py-3 text-sm font-semibold text-white shadow-lg shadow-brand-500/30 transition hover:bg-brand-700">查看经历</a>
+            <a href="#contact" class="magnetic rounded-full border border-slate-300 px-6 py-3 text-sm font-semibold text-slate-700 transition hover:border-slate-400 dark:border-slate-600 dark:text-slate-200 dark:hover:border-slate-500">联系我</a>
           </div>
-          <div data-animate data-delay="320" class="mx-auto mt-14 grid max-w-3xl grid-cols-3 gap-4 sm:gap-6">
+          <div data-animate data-delay="600" class="mx-auto mt-14 grid max-w-3xl grid-cols-3 gap-4 sm:gap-6">
             <div class="rounded-2xl border border-white/10 bg-white/5 px-6 py-7 text-center backdrop-blur-md transition hover:-translate-y-1 hover:border-brand-400/30 hover:bg-white/10 dark:border-white/[0.06] dark:bg-white/[0.03] dark:hover:border-brand-400/20 dark:hover:bg-white/[0.06]" style="box-shadow:0 4px 30px rgba(99,102,241,0.08)">
               <p class="text-4xl font-black tracking-tight text-brand-600 dark:text-brand-100 sm:text-5xl"><span data-count="13">0</span><span class="text-3xl sm:text-4xl">+</span></p>
               <p class="mt-2 text-sm font-medium tracking-wider text-slate-500 dark:text-slate-400">年设计经验</p>
@@ -96,7 +101,17 @@
             </div>
           </div>
         </div>
+        <div class="scroll-hint" aria-hidden="true">
+          <div class="scroll-hint-line"></div>
+          <span class="scroll-hint-text text-slate-400 dark:text-slate-500">SCROLL</span>
+        </div>
       </section>
+
+      <div class="marquee-band" aria-hidden="true">
+        <div class="marquee-track">
+          <span>UI DESIGN</span><span class="dot">·</span><span>DATA VISUALIZATION</span><span class="dot">·</span><span>VR INTERACTION</span><span class="dot">·</span><span>BRAND IDENTITY</span><span class="dot">·</span><span>INDUSTRIAL SOFTWARE</span><span class="dot">·</span><span>MOBILE DESIGN</span><span class="dot">·</span><span>AI POWERED</span><span class="dot">·</span><span>UI DESIGN</span><span class="dot">·</span><span>DATA VISUALIZATION</span><span class="dot">·</span><span>VR INTERACTION</span><span class="dot">·</span><span>BRAND IDENTITY</span><span class="dot">·</span><span>INDUSTRIAL SOFTWARE</span><span class="dot">·</span><span>MOBILE DESIGN</span><span class="dot">·</span><span>AI POWERED</span><span class="dot">·</span>
+        </div>
+      </div>
 
       <section id="about" class="px-4 py-20 sm:px-6 lg:px-8">
         <div class="mx-auto max-w-6xl">
@@ -247,34 +262,52 @@
         </div>
       </section>
 
-      <section id="skills" class="bg-slate-100/70 px-4 py-20 dark:bg-slate-900/60 sm:px-6 lg:px-8">
+      <section id="skills" spellcheck="false" class="bg-slate-100/70 px-4 py-20 dark:bg-slate-900/60 sm:px-6 lg:px-8">
         <div class="mx-auto max-w-6xl">
           <div data-animate class="mb-12 text-center">
             <p class="text-xs font-semibold tracking-[0.3em] text-brand-600 dark:text-brand-200">SKILLS</p>
             <h2 class="mt-3 text-3xl font-bold sm:text-4xl">专业技能</h2>
           </div>
           <div class="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
-            <article data-animate class="rounded-2xl border border-slate-200 bg-white/85 p-6 shadow-sm dark:border-slate-700 dark:bg-slate-900/75">
-              <h3 class="text-base font-semibold">UI / 视觉设计</h3>
+            <article data-animate class="rounded-2xl border border-slate-200 bg-white/85 p-6 shadow-sm transition hover:-translate-y-1 hover:shadow-md dark:border-slate-700 dark:bg-slate-900/75">
+              <div class="mb-4 flex h-12 w-12 items-center justify-center rounded-xl bg-gradient-to-br from-sky-50 to-indigo-50 shadow-sm dark:from-sky-950/30 dark:to-indigo-950/30 dark:shadow-none dark:ring-1 dark:ring-white/10">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><defs><linearGradient id="sk1" x1="2" y1="3" x2="22" y2="21"><stop stop-color="#38bdf8"/><stop offset="1" stop-color="#6366f1"/></linearGradient></defs><rect x="2" y="3" width="20" height="14" rx="2" fill="url(#sk1)"/><path d="M8 21h8M12 17v4" stroke="url(#sk1)" stroke-width="2" stroke-linecap="round"/></svg>
+              </div>
+              <h3 class="text-base font-semibold">UI 设计</h3>
               <p class="mt-2 text-sm text-slate-600 dark:text-slate-300">移动端 · Web · 工业软件界面设计与规范搭建。</p>
             </article>
-            <article data-animate data-delay="60" class="rounded-2xl border border-slate-200 bg-white/85 p-6 shadow-sm dark:border-slate-700 dark:bg-slate-900/75">
+            <article data-animate data-delay="60" class="rounded-2xl border border-slate-200 bg-white/85 p-6 shadow-sm transition hover:-translate-y-1 hover:shadow-md dark:border-slate-700 dark:bg-slate-900/75">
+              <div class="mb-4 flex h-12 w-12 items-center justify-center rounded-xl bg-gradient-to-br from-sky-50 to-indigo-50 shadow-sm dark:from-sky-950/30 dark:to-indigo-950/30 dark:shadow-none dark:ring-1 dark:ring-white/10">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><defs><linearGradient id="sk2" x1="2" y1="2" x2="22" y2="22"><stop stop-color="#38bdf8"/><stop offset="1" stop-color="#6366f1"/></linearGradient></defs><path d="M5.5 3.2V16.8l3.72-3.72h5.56L5.5 3.2z" fill="url(#sk2)"/><circle cx="17" cy="17" r="4" fill="url(#sk2)" opacity="0.25"/><circle cx="17" cy="17" r="1.8" fill="url(#sk2)"/></svg>
+              </div>
               <h3 class="text-base font-semibold">交互体验设计</h3>
               <p class="mt-2 text-sm text-slate-600 dark:text-slate-300">用户研究、原型设计、信息架构与可用性优化。</p>
             </article>
-            <article data-animate data-delay="120" class="rounded-2xl border border-slate-200 bg-white/85 p-6 shadow-sm dark:border-slate-700 dark:bg-slate-900/75">
-              <h3 class="text-base font-semibold">VR / AR / 3D</h3>
+            <article data-animate data-delay="120" class="rounded-2xl border border-slate-200 bg-white/85 p-6 shadow-sm transition hover:-translate-y-1 hover:shadow-md dark:border-slate-700 dark:bg-slate-900/75">
+              <div class="mb-4 flex h-12 w-12 items-center justify-center rounded-xl bg-gradient-to-br from-sky-50 to-indigo-50 shadow-sm dark:from-sky-950/30 dark:to-indigo-950/30 dark:shadow-none dark:ring-1 dark:ring-white/10">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><defs><linearGradient id="sk3" x1="3" y1="2" x2="21" y2="22"><stop stop-color="#38bdf8"/><stop offset="1" stop-color="#6366f1"/></linearGradient></defs><path d="M12 2L3 7l9 5 9-5-9-5z" fill="url(#sk3)" opacity="0.5"/><path d="M3 7v10l9 5V12L3 7z" fill="url(#sk3)" opacity="0.7"/><path d="M21 7v10l-9 5V12l9-5z" fill="url(#sk3)"/></svg>
+              </div>
+              <h3 class="text-base font-semibold">VR / AR 交互</h3>
               <p class="mt-2 text-sm text-slate-600 dark:text-slate-300">沉浸式界面与数字展厅交互体验设计。</p>
             </article>
-            <article data-animate data-delay="180" class="rounded-2xl border border-slate-200 bg-white/85 p-6 shadow-sm dark:border-slate-700 dark:bg-slate-900/75">
+            <article data-animate data-delay="180" class="rounded-2xl border border-slate-200 bg-white/85 p-6 shadow-sm transition hover:-translate-y-1 hover:shadow-md dark:border-slate-700 dark:bg-slate-900/75">
+              <div class="mb-4 flex h-12 w-12 items-center justify-center rounded-xl bg-gradient-to-br from-sky-50 to-indigo-50 shadow-sm dark:from-sky-950/30 dark:to-indigo-950/30 dark:shadow-none dark:ring-1 dark:ring-white/10">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><defs><linearGradient id="sk4" x1="3" y1="3" x2="21" y2="21"><stop stop-color="#38bdf8"/><stop offset="1" stop-color="#6366f1"/></linearGradient></defs><rect x="3" y="13" width="4.5" height="8" rx="1.2" fill="url(#sk4)" opacity="0.5"/><rect x="9.75" y="8" width="4.5" height="13" rx="1.2" fill="url(#sk4)" opacity="0.75"/><rect x="16.5" y="3" width="4.5" height="18" rx="1.2" fill="url(#sk4)"/></svg>
+              </div>
               <h3 class="text-base font-semibold">数据可视化</h3>
               <p class="mt-2 text-sm text-slate-600 dark:text-slate-300">BI 看板、信息图表和复杂数据交互方案。</p>
             </article>
-            <article data-animate data-delay="240" class="rounded-2xl border border-slate-200 bg-white/85 p-6 shadow-sm dark:border-slate-700 dark:bg-slate-900/75">
+            <article data-animate data-delay="240" class="rounded-2xl border border-slate-200 bg-white/85 p-6 shadow-sm transition hover:-translate-y-1 hover:shadow-md dark:border-slate-700 dark:bg-slate-900/75">
+              <div class="mb-4 flex h-12 w-12 items-center justify-center rounded-xl bg-gradient-to-br from-sky-50 to-indigo-50 shadow-sm dark:from-sky-950/30 dark:to-indigo-950/30 dark:shadow-none dark:ring-1 dark:ring-white/10">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><defs><linearGradient id="sk5" x1="2" y1="2" x2="22" y2="22"><stop stop-color="#38bdf8"/><stop offset="1" stop-color="#6366f1"/></linearGradient></defs><path d="M12 2L2 9l10 13L22 9 12 2z" fill="url(#sk5)"/><path d="M2 9h20" stroke="#fff" stroke-width="0.8" opacity="0.35"/><path d="M9 2l-7 7M15 2l7 7M12 9v13" stroke="#fff" stroke-width="0.6" opacity="0.2"/></svg>
+              </div>
               <h3 class="text-base font-semibold">品牌视觉体系</h3>
               <p class="mt-2 text-sm text-slate-600 dark:text-slate-300">品牌规范、运营物料和视觉延展系统设计。</p>
             </article>
-            <article data-animate data-delay="300" class="rounded-2xl border border-slate-200 bg-white/85 p-6 shadow-sm dark:border-slate-700 dark:bg-slate-900/75">
+            <article data-animate data-delay="300" class="rounded-2xl border border-slate-200 bg-white/85 p-6 shadow-sm transition hover:-translate-y-1 hover:shadow-md dark:border-slate-700 dark:bg-slate-900/75">
+              <div class="mb-4 flex h-12 w-12 items-center justify-center rounded-xl bg-gradient-to-br from-sky-50 to-indigo-50 shadow-sm dark:from-sky-950/30 dark:to-indigo-950/30 dark:shadow-none dark:ring-1 dark:ring-white/10">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><defs><linearGradient id="sk6" x1="2" y1="2" x2="22" y2="22"><stop stop-color="#38bdf8"/><stop offset="1" stop-color="#6366f1"/></linearGradient></defs><path d="M12 2l1.8 5.4L19.2 9l-5.4 1.8L12 16.2l-1.8-5.4L4.8 9l5.4-1.8L12 2z" fill="url(#sk6)"/><path d="M19 16l1 3 3 1-3 1-1 3-1-3-3-1 3-1 1-3z" fill="url(#sk6)" opacity="0.5"/><path d="M5 17l.6 1.8 1.8.6-1.8.6-.6 1.8-.6-1.8L2.6 19.4l1.8-.6L5 17z" fill="url(#sk6)" opacity="0.35"/></svg>
+              </div>
               <h3 class="text-base font-semibold">AI 辅助设计</h3>
               <p class="mt-2 text-sm text-slate-600 dark:text-slate-300">通过 AI 工具提效，快速迭代创意与设计交付。</p>
             </article>
@@ -300,7 +333,7 @@
       <p>&copy; 2026 UI Designer Portfolio. All rights reserved.</p>
     </footer>
 
-    <button id="themeToggle" aria-label="Toggle theme" class="fixed bottom-6 right-6 z-50 inline-flex h-12 w-12 items-center justify-center rounded-full border border-slate-300 bg-white/90 text-slate-700 shadow-lg backdrop-blur transition hover:scale-105 dark:border-slate-700 dark:bg-slate-900/90 dark:text-slate-100">
+    <button id="themeToggle" aria-label="Toggle theme" class="magnetic fixed bottom-6 right-6 z-50 inline-flex h-12 w-12 items-center justify-center rounded-full border border-slate-300 bg-white/90 text-slate-700 shadow-lg backdrop-blur transition dark:border-slate-700 dark:bg-slate-900/90 dark:text-slate-100">
       <svg class="icon-moon h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
         <path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"></path>
       </svg>
@@ -311,6 +344,9 @@
     </button>
   </div>
 
+  <div class="cursor-dot" id="cursorDot"></div>
+  <div class="cursor-ring" id="cursorRing"></div>
+  <script src="https://cdn.jsdelivr.net/npm/lenis@1/dist/lenis.min.js"></script>
   <script src="script.js"></script>
   <template id="legacy-markup">
 <html lang="zh-CN">
