@@ -3,7 +3,7 @@ const root = document.documentElement;
 const themeToggle = document.getElementById("themeToggle");
 
 function getSavedTheme() {
-  return localStorage.getItem("theme") || "light";
+  return localStorage.getItem("theme") || "dark";
 }
 
 function applyTheme(theme) {

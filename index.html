@@ -1,10 +1,10 @@
 <!DOCTYPE html>
-<html lang="zh-CN" class="scroll-smooth">
+<html lang="zh-CN" class="scroll-smooth dark">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>UI Designer Portfolio | Tailwind</title>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Noto+Sans+SC:wght@300;400;500;700&display=swap" rel="stylesheet">
+  <title>UI 设计师作品集</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Noto+Sans+SC:wght@300;400;500;700;900&family=Sora:wght@700;800&display=swap" rel="stylesheet">
   <script src="https://cdn.tailwindcss.com"></script>
   <script>
     tailwind.config = {
@@ -69,41 +69,50 @@
     </div>
 
     <main>
-      <section id="hero" class="relative flex min-h-screen items-center px-4 pb-20 pt-28 sm:px-6 lg:px-8">
-        <div class="mx-auto w-full max-w-4xl text-center">
+      <section id="hero" class="relative flex min-h-screen items-center px-4 pb-20 pt-28 sm:px-6 lg:px-8 overflow-hidden">
+        <img src="assets/hero-bg.png" alt="" class="hero-bg-image" aria-hidden="true">
+        <canvas class="hero-bg-canvas" id="heroBgCanvas" aria-hidden="true"></canvas>
+        <div class="hero-waves" aria-hidden="true">
+          <div class="hero-wave hero-wave-1"></div>
+          <div class="hero-wave hero-wave-2"></div>
+          <div class="hero-wave hero-wave-3"></div>
+          <div class="hero-wave hero-wave-4"></div>
+          <div class="hero-wave hero-wave-5"></div>
+        </div>
+        <div id="fallingTags" class="falling-tags-container" aria-hidden="true"></div>
+        <div class="relative z-[1] mx-auto w-full max-w-4xl text-center">
           <p data-animate class="inline-flex rounded-full border border-brand-200 bg-brand-50 px-4 py-2 text-sm font-medium text-brand-700 dark:border-brand-500/40 dark:bg-brand-500/15 dark:text-brand-100">
-            UI / 视觉设计师
+            UI / UX 设计师
           </p>
-          <h1 class="mt-6 text-4xl font-black leading-tight sm:text-6xl lg:text-7xl">
-            <span class="hero-line-reveal">创造极致</span>
-            <span class="hero-line-reveal gradient-text">数字体验</span>
+          <h1 class="hero-title-main mt-6 text-5xl font-black leading-tight sm:text-7xl lg:text-8xl">
+            <span class="hero-line-reveal">深耕产品体验</span>
+            <span class="hero-line-reveal gradient-text">推动设计落地</span>
           </h1>
-          <p data-animate data-delay="300" class="mx-auto mt-6 max-w-2xl text-base text-slate-600 dark:text-slate-300">
-            13+ 年设计经验 · 跨领域全流程设计能力<br>
-            工业软件 / VR交互 / 数据可视化 / 移动端产品
+          <p data-animate data-delay="300" class="mx-auto mt-6 max-w-2xl text-base leading-relaxed text-slate-600 dark:text-slate-300">
+            专注 UI/UX 设计方向，参与过 B 端、C 端及 VR/AR 等多类产品项目，具备界面设计、体验优化与方案落地能力。熟悉设计体系搭建与规范沉淀，能够结合 AI 辅助设计提升效率，并协同产品、研发等团队推动方案落地。以用户体验为核心，助力业务转化。
           </p>
           <div data-animate data-delay="450" class="mt-8 flex flex-wrap items-center justify-center gap-4">
-            <a href="#experience" class="magnetic rounded-full bg-brand-600 px-6 py-3 text-sm font-semibold text-white shadow-lg shadow-brand-500/30 transition hover:bg-brand-700">查看经历</a>
-            <a href="#contact" class="magnetic rounded-full border border-slate-300 px-6 py-3 text-sm font-semibold text-slate-700 transition hover:border-slate-400 dark:border-slate-600 dark:text-slate-200 dark:hover:border-slate-500">联系我</a>
+            <a href="#portfolio" class="magnetic rounded-full bg-brand-600 px-8 py-4 text-base font-semibold text-white shadow-lg shadow-brand-500/30 transition hover:bg-brand-700">查看作品</a>
+            <a href="#contact" class="magnetic rounded-full border border-white/30 bg-white/10 px-8 py-4 text-base font-semibold text-white backdrop-blur-sm transition hover:bg-white/20 hover:border-white/50 shadow-lg shadow-white/5">联系我</a>
           </div>
           <div data-animate data-delay="600" class="mx-auto mt-14 grid max-w-3xl grid-cols-3 gap-4 sm:gap-6">
-            <div class="rounded-2xl border border-white/10 bg-white/5 px-6 py-7 text-center backdrop-blur-md transition hover:-translate-y-1 hover:border-brand-400/30 hover:bg-white/10 dark:border-white/[0.06] dark:bg-white/[0.03] dark:hover:border-brand-400/20 dark:hover:bg-white/[0.06]" style="box-shadow:0 4px 30px rgba(99,102,241,0.08)">
-              <p class="text-4xl font-black tracking-tight text-brand-600 dark:text-brand-100 sm:text-5xl"><span data-count="13">0</span><span class="text-3xl sm:text-4xl">+</span></p>
-              <p class="mt-2 text-sm font-medium tracking-wider text-slate-500 dark:text-slate-400">年设计经验</p>
+            <div class="hero-stat-card rounded-2xl px-5 py-7 text-center transition hover:-translate-y-1">
+              <p class="text-lg font-bold tracking-tight text-white sm:text-xl">多年沉淀</p>
+              <p class="mt-2 text-xs leading-relaxed text-white/60">持续积累设计实践与项目经验</p>
             </div>
-            <div class="rounded-2xl border border-white/10 bg-white/5 px-6 py-7 text-center backdrop-blur-md transition hover:-translate-y-1 hover:border-brand-400/30 hover:bg-white/10 dark:border-white/[0.06] dark:bg-white/[0.03] dark:hover:border-brand-400/20 dark:hover:bg-white/[0.06]" style="box-shadow:0 4px 30px rgba(99,102,241,0.08)">
-              <p class="text-4xl font-black tracking-tight text-brand-600 dark:text-brand-100 sm:text-5xl"><span data-count="6">0</span><span class="text-3xl sm:text-4xl">+</span></p>
-              <p class="mt-2 text-sm font-medium tracking-wider text-slate-500 dark:text-slate-400">行业领域</p>
+            <div class="hero-stat-card rounded-2xl px-5 py-7 text-center transition hover:-translate-y-1">
+              <p class="text-lg font-bold tracking-tight text-white sm:text-xl">跨行业</p>
+              <p class="mt-2 text-xs leading-relaxed text-white/60">具备多领域产品设计实践经验</p>
             </div>
-            <div class="rounded-2xl border border-white/10 bg-white/5 px-6 py-7 text-center backdrop-blur-md transition hover:-translate-y-1 hover:border-brand-400/30 hover:bg-white/10 dark:border-white/[0.06] dark:bg-white/[0.03] dark:hover:border-brand-400/20 dark:hover:bg-white/[0.06]" style="box-shadow:0 4px 30px rgba(99,102,241,0.08)">
-              <p class="text-4xl font-black tracking-tight text-brand-600 dark:text-brand-100 sm:text-5xl"><span data-count="50">0</span><span class="text-3xl sm:text-4xl">+</span></p>
-              <p class="mt-2 text-sm font-medium tracking-wider text-slate-500 dark:text-slate-400">项目交付</p>
+            <div class="hero-stat-card rounded-2xl px-5 py-7 text-center transition hover:-translate-y-1">
+              <p class="text-lg font-bold tracking-tight text-white sm:text-xl">多项目</p>
+              <p class="mt-2 text-xs leading-relaxed text-white/60">参与多个项目的设计推进与交付</p>
             </div>
           </div>
         </div>
         <div class="scroll-hint" aria-hidden="true">
           <div class="scroll-hint-line"></div>
-          <span class="scroll-hint-text text-slate-400 dark:text-slate-500">SCROLL</span>
+          <span class="scroll-hint-text text-slate-400 dark:text-slate-500">向下滚动</span>
         </div>
       </section>
 
@@ -116,41 +125,63 @@
       <section id="about" class="px-4 py-20 sm:px-6 lg:px-8">
         <div class="mx-auto max-w-6xl">
           <div data-animate class="mb-12 text-center">
-            <p class="text-xs font-semibold tracking-[0.3em] text-brand-600 dark:text-brand-200">ABOUT ME</p>
+            <p class="text-xs font-semibold tracking-[0.3em] text-brand-600 dark:text-brand-200">01</p>
             <h2 class="mt-3 text-3xl font-bold sm:text-4xl">关于我</h2>
           </div>
           <div class="grid gap-8 lg:grid-cols-2">
             <div data-animate data-delay="80" class="space-y-5 text-slate-600 dark:text-slate-300">
               <p>毕业于 <strong class="text-slate-900 dark:text-white">西安美术学院</strong> 艺术设计专业，拥有扎实美术功底与 13+ 年设计实战经验。</p>
               <p>擅长将复杂业务需求转化为清晰、高效的用户界面，覆盖工业软件、数据可视化、品牌视觉与沉浸式交互。</p>
-              <p>持续使用 AI 工具优化设计流程，推动设计与工程协同落地。</p>
+              <p>擅长结合 AI 工具提升设计效率，并推进设计方案落地实施。</p>
             </div>
             <div data-animate data-delay="140" class="grid gap-4">
-              <article class="rounded-2xl border border-slate-200 bg-white/80 p-5 shadow-sm dark:border-slate-700 dark:bg-slate-900/70">
-                <h3 class="text-base font-semibold">全流程设计</h3>
-                <p class="mt-2 text-sm text-slate-600 dark:text-slate-300">从需求分析、交互设计到视觉输出，完整掌控设计链路。</p>
+              <article class="about-ability-card glass-card group rounded-2xl p-6 transition hover:-translate-y-1">
+                <div class="flex items-start gap-4">
+                  <span class="mt-1 flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-gradient-to-br from-cyan-500/20 to-indigo-500/20 text-lg dark:from-cyan-400/15 dark:to-indigo-400/15">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" class="text-cyan-500 dark:text-cyan-400"><path d="M12 20h9M16.5 3.5a2.12 2.12 0 013 3L7 19l-4 1 1-4L16.5 3.5z" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                  </span>
+                  <div>
+                    <h3 class="text-base font-semibold">设计方案能力</h3>
+                    <p class="mt-1.5 text-sm leading-relaxed text-slate-600 dark:text-slate-400">具备需求理解、交互梳理与视觉输出能力，能够完成较完整的设计方案表达。</p>
+                  </div>
+                </div>
               </article>
-              <article class="rounded-2xl border border-slate-200 bg-white/80 p-5 shadow-sm dark:border-slate-700 dark:bg-slate-900/70">
-                <h3 class="text-base font-semibold">多终端适配</h3>
-                <p class="mt-2 text-sm text-slate-600 dark:text-slate-300">Web / App / VR / 大屏多端统一视觉和体验策略。</p>
+              <article class="about-ability-card glass-card group rounded-2xl p-6 transition hover:-translate-y-1">
+                <div class="flex items-start gap-4">
+                  <span class="mt-1 flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-gradient-to-br from-violet-500/20 to-fuchsia-500/20 text-lg dark:from-violet-400/15 dark:to-fuchsia-400/15">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" class="text-violet-500 dark:text-violet-400"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                  </span>
+                  <div>
+                    <h3 class="text-base font-semibold">多端产品经验</h3>
+                    <p class="mt-1.5 text-sm leading-relaxed text-slate-600 dark:text-slate-400">具备 Web、App、VR 与大屏等多端界面设计经验，关注体验一致性与视觉统一。</p>
+                  </div>
+                </div>
               </article>
-              <article class="rounded-2xl border border-slate-200 bg-white/80 p-5 shadow-sm dark:border-slate-700 dark:bg-slate-900/70">
-                <h3 class="text-base font-semibold">AI 赋能设计</h3>
-                <p class="mt-2 text-sm text-slate-600 dark:text-slate-300">将 AI 引入创意方案和迭代流程，提升效率与创新性。</p>
+              <article class="about-ability-card glass-card group rounded-2xl p-6 transition hover:-translate-y-1">
+                <div class="flex items-start gap-4">
+                  <span class="mt-1 flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-gradient-to-br from-amber-500/20 to-orange-500/20 text-lg dark:from-amber-400/15 dark:to-orange-400/15">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" class="text-amber-500 dark:text-amber-400"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2" stroke-linecap="round" stroke-linejoin="round"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87M16 3.13a4 4 0 010 7.75" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                  </span>
+                  <div>
+                    <h3 class="text-base font-semibold">设计协同能力</h3>
+                    <p class="mt-1.5 text-sm leading-relaxed text-slate-600 dark:text-slate-400">熟悉与产品、研发团队协作推进方案落地，注重设计的可实现性与交付质量。</p>
+                  </div>
+                </div>
               </article>
             </div>
           </div>
         </div>
       </section>
 
-      <section id="experience" class="bg-slate-100/70 px-4 py-20 dark:bg-slate-900/60 sm:px-6 lg:px-8">
-        <div class="mx-auto max-w-6xl">
+      <section id="experience" class="relative bg-slate-100/70 px-4 py-20 dark:bg-slate-900/60 sm:px-6 lg:px-8">
+        <div class="section-bg" aria-hidden="true"></div>
+        <div class="mx-auto max-w-6xl relative z-[1]">
           <div data-animate class="mb-12 text-center">
-            <p class="text-xs font-semibold tracking-[0.3em] text-brand-600 dark:text-brand-200">EXPERIENCE</p>
+            <p class="text-xs font-semibold tracking-[0.3em] text-brand-600 dark:text-brand-200">02</p>
             <h2 class="mt-3 text-3xl font-bold sm:text-4xl">工作经历</h2>
           </div>
-          <div class="relative space-y-6 border-l border-brand-300/60 pl-6 dark:border-brand-500/40">
-            <article data-animate class="relative rounded-2xl border border-slate-200 bg-white/85 p-6 shadow-sm dark:border-slate-700 dark:bg-slate-900/75">
+          <div class="relative space-y-6 border-l-2 border-brand-500/40 pl-6 dark:border-brand-500/30">
+            <article data-animate class="glass-card relative rounded-2xl p-6">
               <span class="absolute -left-[31px] top-8 h-3 w-3 rounded-full bg-brand-600"></span>
               <div class="flex flex-wrap items-start justify-between gap-2">
                 <h3 class="text-lg font-bold">3D3S 工业软件 · UI 设计师</h3>
@@ -159,22 +190,20 @@
               <ul class="mt-3 list-disc space-y-1 pl-5 text-sm text-slate-600 dark:text-slate-300">
                 <li>主导 3D3S 2026 主界面改版与导航架构重构</li>
                 <li>负责新增云授权系统 UI 设计并协同研发落地</li>
-                <li>统一官网、画册、公众号等品牌视觉输出</li>
               </ul>
             </article>
-            <article data-animate data-delay="70" class="relative rounded-2xl border border-slate-200 bg-white/85 p-6 shadow-sm dark:border-slate-700 dark:bg-slate-900/75">
+            <article data-animate data-delay="70" class="glass-card relative rounded-2xl p-6">
               <span class="absolute -left-[31px] top-8 h-3 w-3 rounded-full bg-brand-600"></span>
               <div class="flex flex-wrap items-start justify-between gap-2">
                 <h3 class="text-lg font-bold">VR / 数字展厅 · UI 设计师</h3>
                 <span class="text-sm text-slate-500 dark:text-slate-400">2024.09 - 2025.01</span>
               </div>
               <ul class="mt-3 list-disc space-y-1 pl-5 text-sm text-slate-600 dark:text-slate-300">
-                <li>主导 VR 古建修复项目 UI 全流程设计</li>
-                <li>运用 AI 工具将方案提案周期缩短 70%</li>
+                <li>主导 VR 古建修复项目 UI 全流程设计，过程中运用 AI 工具辅助方案输出</li>
                 <li>完成 200m² 智能财经展厅视觉方案</li>
               </ul>
             </article>
-            <article data-animate data-delay="140" class="relative rounded-2xl border border-slate-200 bg-white/85 p-6 shadow-sm dark:border-slate-700 dark:bg-slate-900/75">
+            <article data-animate data-delay="140" class="glass-card relative rounded-2xl p-6">
               <span class="absolute -left-[31px] top-8 h-3 w-3 rounded-full bg-brand-600"></span>
               <div class="flex flex-wrap items-start justify-between gap-2">
                 <h3 class="text-lg font-bold">兴业数金 · UI 设计师</h3>
@@ -185,7 +214,7 @@
                 <li>负责 B 端低代码云平台 UI 规范搭建</li>
               </ul>
             </article>
-            <article data-animate data-delay="210" class="relative rounded-2xl border border-slate-200 bg-white/85 p-6 shadow-sm dark:border-slate-700 dark:bg-slate-900/75">
+            <article data-animate data-delay="210" class="glass-card relative rounded-2xl p-6">
               <span class="absolute -left-[31px] top-8 h-3 w-3 rounded-full bg-brand-600"></span>
               <div class="flex flex-wrap items-start justify-between gap-2">
                 <h3 class="text-lg font-bold">云计算 / 数据可视化 · UI 设计师</h3>
@@ -203,7 +232,7 @@
       <section id="portfolio" class="px-4 py-20 sm:px-6 lg:px-8">
         <div class="mx-auto max-w-6xl">
           <div data-animate class="mb-10 text-center">
-            <p class="text-xs font-semibold tracking-[0.3em] text-brand-600 dark:text-brand-200">PORTFOLIO</p>
+            <p class="text-xs font-semibold tracking-[0.3em] text-brand-600 dark:text-brand-200">03</p>
             <h2 class="mt-3 text-3xl font-bold sm:text-4xl">个人作品集</h2>
           </div>
 
@@ -216,46 +245,60 @@
           </div>
 
           <div class="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
-            <a href="works/xinxianghui.html" class="portfolio-item group rounded-2xl border border-slate-200 bg-white/85 shadow-sm transition hover:-translate-y-1 hover:shadow-lg dark:border-slate-700 dark:bg-slate-900/75" data-category="ui" data-animate>
-              <div class="overflow-hidden rounded-t-2xl"><img src="assets/兴享惠小程序0309备份@2x.png" alt="兴享惠金融小程序" class="h-40 w-full object-cover object-top transition group-hover:scale-105" loading="lazy"></div>
+            <a href="works/3d3s.html" class="portfolio-item glass-card group rounded-2xl transition hover:-translate-y-1" data-category="brand" data-animate>
+              <div class="overflow-hidden rounded-t-2xl"><img src="assets/3D3S项目.jpg" alt="3D3S 工业结构设计软件" class="h-48 w-full object-cover object-top transition group-hover:scale-105" loading="lazy"></div>
+              <div class="p-5">
+                <h3 class="text-base font-semibold">3D3S 工业结构设计软件</h3>
+                <p class="mt-2 text-sm text-slate-600 dark:text-slate-300">工业软件 · 品牌设计 · AI 辅助设计</p>
+              </div>
+            </a>
+            <a href="works/xinxianghui.html" class="portfolio-item glass-card group rounded-2xl transition hover:-translate-y-1" data-category="ui" data-animate data-delay="50">
+              <div class="overflow-hidden rounded-t-2xl"><img src="assets/兴享惠小程序.jpg" alt="兴享惠金融小程序" class="h-48 w-full object-cover object-top transition group-hover:scale-105" loading="lazy"></div>
               <div class="p-5">
                 <h3 class="text-base font-semibold">兴享惠金融小程序</h3>
                 <p class="mt-2 text-sm text-slate-600 dark:text-slate-300">「兴宝」IP 视觉体系 · 组件库 · 设计规范</p>
               </div>
             </a>
-            <a href="works/exhibition.html" class="portfolio-item group rounded-2xl border border-slate-200 bg-white/85 shadow-sm transition hover:-translate-y-1 hover:shadow-lg dark:border-slate-700 dark:bg-slate-900/75" data-category="vr" data-animate data-delay="50">
-              <div class="overflow-hidden rounded-t-2xl"><img src="assets/企业展厅设计.png" alt="企业展厅设计" class="h-40 w-full object-cover object-top transition group-hover:scale-105" loading="lazy"></div>
-              <div class="p-5">
-                <h3 class="text-base font-semibold">企业展厅设计</h3>
-                <p class="mt-2 text-sm text-slate-600 dark:text-slate-300">动态墙面视觉 · 大事记交互 · 沉浸式体验</p>
-              </div>
-            </a>
-            <a href="works/samsung.html" class="portfolio-item group rounded-2xl border border-slate-200 bg-white/85 shadow-sm transition hover:-translate-y-1 hover:shadow-lg dark:border-slate-700 dark:bg-slate-900/75" data-category="data" data-animate data-delay="100">
-              <div class="overflow-hidden rounded-t-2xl"><img src="assets/三星智慧门店管理平台作品集@1x.png" alt="三星智慧门店管理平台" class="h-40 w-full object-cover object-top transition group-hover:scale-105" loading="lazy"></div>
+            <a href="works/samsung.html" class="portfolio-item glass-card group rounded-2xl transition hover:-translate-y-1" data-category="data" data-animate data-delay="100">
+              <div class="overflow-hidden rounded-t-2xl"><img src="assets/三星智慧门店管理平台作品集@1x.jpg" alt="三星智慧门店管理平台" class="h-48 w-full object-cover object-top transition group-hover:scale-105" loading="lazy"></div>
               <div class="p-5">
                 <h3 class="text-base font-semibold">三星智慧门店管理平台</h3>
                 <p class="mt-2 text-sm text-slate-600 dark:text-slate-300">智慧门店管理 · 多端适配 · B 端平台设计</p>
               </div>
             </a>
-            <a href="works/datavis.html" class="portfolio-item group rounded-2xl border border-slate-200 bg-white/85 shadow-sm transition hover:-translate-y-1 hover:shadow-lg dark:border-slate-700 dark:bg-slate-900/75" data-category="data" data-animate data-delay="150">
-              <div class="overflow-hidden rounded-t-2xl"><img src="assets/数据可视化作品合集.png" alt="数据可视化作品合集" class="h-40 w-full object-cover object-top transition group-hover:scale-105" loading="lazy"></div>
+            <a href="works/datavis.html" class="portfolio-item glass-card group rounded-2xl transition hover:-translate-y-1" data-category="data" data-animate data-delay="150">
+              <div class="overflow-hidden rounded-t-2xl"><img src="assets/数据可视化作品合集.jpg" alt="数据可视化作品合集" class="h-48 w-full object-cover object-top transition group-hover:scale-105" loading="lazy"></div>
               <div class="p-5">
                 <h3 class="text-base font-semibold">数据可视化作品合集</h3>
                 <p class="mt-2 text-sm text-slate-600 dark:text-slate-300">BI 看板 · 数据大屏 · 多维度图表交互</p>
               </div>
             </a>
-            <a href="works/wuying.html" class="portfolio-item group rounded-2xl border border-slate-200 bg-white/85 shadow-sm transition hover:-translate-y-1 hover:shadow-lg dark:border-slate-700 dark:bg-slate-900/75" data-category="ui" data-animate data-delay="200">
-              <div class="overflow-hidden rounded-t-2xl"><img src="assets/无影云化办公客户端.png" alt="无影云化办公客户端" class="h-40 w-full object-cover object-top transition group-hover:scale-105" loading="lazy"></div>
+            <a href="works/wuying.html" class="portfolio-item glass-card group rounded-2xl transition hover:-translate-y-1" data-category="ui" data-animate data-delay="200">
+              <div class="overflow-hidden rounded-t-2xl"><img src="assets/无影云化办公客户端.jpg" alt="无影云化办公客户端" class="h-48 w-full object-cover object-top transition group-hover:scale-105" loading="lazy"></div>
               <div class="p-5">
                 <h3 class="text-base font-semibold">无影云化办公客户端</h3>
                 <p class="mt-2 text-sm text-slate-600 dark:text-slate-300">云电脑 UI 全流程设计 · 多端交互规范</p>
               </div>
             </a>
-            <a href="works/recipe.html" class="portfolio-item group rounded-2xl border border-slate-200 bg-white/85 shadow-sm transition hover:-translate-y-1 hover:shadow-lg dark:border-slate-700 dark:bg-slate-900/75" data-category="ui" data-animate data-delay="250">
-              <div class="overflow-hidden rounded-t-2xl"><img src="assets/菜谱画板0626@2x 拷贝 2.png" alt="生活服务电商APP" class="h-40 w-full object-cover object-top transition group-hover:scale-105" loading="lazy"></div>
+            <a href="works/recipe.html" class="portfolio-item glass-card group rounded-2xl transition hover:-translate-y-1" data-category="ui" data-animate data-delay="250">
+              <div class="overflow-hidden rounded-t-2xl"><img src="assets/菜谱画板.jpg" alt="生活服务电商APP" class="h-48 w-full object-cover object-top transition group-hover:scale-105" loading="lazy"></div>
               <div class="p-5">
                 <h3 class="text-base font-semibold">生活服务电商 APP</h3>
                 <p class="mt-2 text-sm text-slate-600 dark:text-slate-300">新零售电商 · 沉浸式活动界面 · 短视频社区</p>
+              </div>
+            </a>
+            <a href="works/exhibition.html" class="portfolio-item glass-card group rounded-2xl transition hover:-translate-y-1" data-category="vr" data-animate data-delay="300">
+              <div class="overflow-hidden rounded-t-2xl"><img src="assets/企业展厅设计.jpg" alt="企业展厅设计" class="h-48 w-full object-cover object-top transition group-hover:scale-105" loading="lazy"></div>
+              <div class="p-5">
+                <h3 class="text-base font-semibold">企业展厅设计</h3>
+                <p class="mt-2 text-sm text-slate-600 dark:text-slate-300">动态墙面视觉 · 大事记交互 · 沉浸式体验</p>
+              </div>
+            </a>
+            <a href="works/xiaotangshan.html" class="portfolio-item glass-card group rounded-2xl transition hover:-translate-y-1" data-category="ui" data-animate data-delay="350">
+              <div class="overflow-hidden rounded-t-2xl"><img src="assets/小汤山小程序.jpg" alt="小汤山小程序" class="h-48 w-full object-cover object-top transition group-hover:scale-105" loading="lazy"></div>
+              <div class="p-5">
+                <h3 class="text-base font-semibold">小汤山小程序</h3>
+                <p class="mt-2 text-sm text-slate-600 dark:text-slate-300">小程序 · 生活服务 · 移动端设计</p>
               </div>
             </a>
           </div>
@@ -265,48 +308,48 @@
       <section id="skills" spellcheck="false" class="bg-slate-100/70 px-4 py-20 dark:bg-slate-900/60 sm:px-6 lg:px-8">
         <div class="mx-auto max-w-6xl">
           <div data-animate class="mb-12 text-center">
-            <p class="text-xs font-semibold tracking-[0.3em] text-brand-600 dark:text-brand-200">SKILLS</p>
+            <p class="text-xs font-semibold tracking-[0.3em] text-brand-600 dark:text-brand-200">04</p>
             <h2 class="mt-3 text-3xl font-bold sm:text-4xl">专业技能</h2>
           </div>
           <div class="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
-            <article data-animate class="rounded-2xl border border-slate-200 bg-white/85 p-6 shadow-sm transition hover:-translate-y-1 hover:shadow-md dark:border-slate-700 dark:bg-slate-900/75">
-              <div class="mb-4 flex h-12 w-12 items-center justify-center rounded-xl bg-gradient-to-br from-sky-50 to-indigo-50 shadow-sm dark:from-sky-950/30 dark:to-indigo-950/30 dark:shadow-none dark:ring-1 dark:ring-white/10">
-                <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><defs><linearGradient id="sk1" x1="2" y1="3" x2="22" y2="21"><stop stop-color="#38bdf8"/><stop offset="1" stop-color="#6366f1"/></linearGradient></defs><rect x="2" y="3" width="20" height="14" rx="2" fill="url(#sk1)"/><path d="M8 21h8M12 17v4" stroke="url(#sk1)" stroke-width="2" stroke-linecap="round"/></svg>
+            <article data-animate class="skill-card-glow glass-card rounded-2xl p-7 transition hover:-translate-y-2">
+              <div class="skill-icon-box mb-5 flex h-24 w-24 items-center justify-center rounded-2xl bg-gradient-to-br from-sky-50 to-indigo-50 shadow-md dark:from-sky-950/40 dark:to-indigo-950/40 dark:shadow-lg dark:shadow-indigo-500/10 dark:ring-1 dark:ring-white/10">
+                <svg width="48" height="48" viewBox="0 0 24 24" fill="none"><defs><linearGradient id="sk1" x1="2" y1="3" x2="22" y2="21"><stop stop-color="#38bdf8"/><stop offset="1" stop-color="#6366f1"/></linearGradient></defs><rect x="2" y="3" width="20" height="14" rx="2" fill="url(#sk1)"/><path d="M8 21h8M12 17v4" stroke="url(#sk1)" stroke-width="2" stroke-linecap="round"/></svg>
               </div>
               <h3 class="text-base font-semibold">UI 设计</h3>
               <p class="mt-2 text-sm text-slate-600 dark:text-slate-300">移动端 · Web · 工业软件界面设计与规范搭建。</p>
             </article>
-            <article data-animate data-delay="60" class="rounded-2xl border border-slate-200 bg-white/85 p-6 shadow-sm transition hover:-translate-y-1 hover:shadow-md dark:border-slate-700 dark:bg-slate-900/75">
-              <div class="mb-4 flex h-12 w-12 items-center justify-center rounded-xl bg-gradient-to-br from-sky-50 to-indigo-50 shadow-sm dark:from-sky-950/30 dark:to-indigo-950/30 dark:shadow-none dark:ring-1 dark:ring-white/10">
-                <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><defs><linearGradient id="sk2" x1="2" y1="2" x2="22" y2="22"><stop stop-color="#38bdf8"/><stop offset="1" stop-color="#6366f1"/></linearGradient></defs><path d="M5.5 3.2V16.8l3.72-3.72h5.56L5.5 3.2z" fill="url(#sk2)"/><circle cx="17" cy="17" r="4" fill="url(#sk2)" opacity="0.25"/><circle cx="17" cy="17" r="1.8" fill="url(#sk2)"/></svg>
+            <article data-animate data-delay="60" class="skill-card-glow glass-card rounded-2xl p-7 transition hover:-translate-y-2">
+              <div class="skill-icon-box mb-5 flex h-24 w-24 items-center justify-center rounded-2xl bg-gradient-to-br from-sky-50 to-indigo-50 shadow-md dark:from-sky-950/40 dark:to-indigo-950/40 dark:shadow-lg dark:shadow-indigo-500/10 dark:ring-1 dark:ring-white/10">
+                <svg width="48" height="48" viewBox="0 0 24 24" fill="none"><defs><linearGradient id="sk2" x1="2" y1="2" x2="22" y2="22"><stop stop-color="#38bdf8"/><stop offset="1" stop-color="#6366f1"/></linearGradient></defs><path d="M5.5 3.2V16.8l3.72-3.72h5.56L5.5 3.2z" fill="url(#sk2)"/><circle cx="17" cy="17" r="4" fill="url(#sk2)" opacity="0.25"/><circle cx="17" cy="17" r="1.8" fill="url(#sk2)"/></svg>
               </div>
               <h3 class="text-base font-semibold">交互体验设计</h3>
               <p class="mt-2 text-sm text-slate-600 dark:text-slate-300">用户研究、原型设计、信息架构与可用性优化。</p>
             </article>
-            <article data-animate data-delay="120" class="rounded-2xl border border-slate-200 bg-white/85 p-6 shadow-sm transition hover:-translate-y-1 hover:shadow-md dark:border-slate-700 dark:bg-slate-900/75">
-              <div class="mb-4 flex h-12 w-12 items-center justify-center rounded-xl bg-gradient-to-br from-sky-50 to-indigo-50 shadow-sm dark:from-sky-950/30 dark:to-indigo-950/30 dark:shadow-none dark:ring-1 dark:ring-white/10">
-                <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><defs><linearGradient id="sk3" x1="3" y1="2" x2="21" y2="22"><stop stop-color="#38bdf8"/><stop offset="1" stop-color="#6366f1"/></linearGradient></defs><path d="M12 2L3 7l9 5 9-5-9-5z" fill="url(#sk3)" opacity="0.5"/><path d="M3 7v10l9 5V12L3 7z" fill="url(#sk3)" opacity="0.7"/><path d="M21 7v10l-9 5V12l9-5z" fill="url(#sk3)"/></svg>
+            <article data-animate data-delay="120" class="skill-card-glow glass-card rounded-2xl p-7 transition hover:-translate-y-2">
+              <div class="skill-icon-box mb-5 flex h-24 w-24 items-center justify-center rounded-2xl bg-gradient-to-br from-sky-50 to-indigo-50 shadow-md dark:from-sky-950/40 dark:to-indigo-950/40 dark:shadow-lg dark:shadow-indigo-500/10 dark:ring-1 dark:ring-white/10">
+                <svg width="48" height="48" viewBox="0 0 24 24" fill="none"><defs><linearGradient id="sk3" x1="3" y1="2" x2="21" y2="22"><stop stop-color="#38bdf8"/><stop offset="1" stop-color="#6366f1"/></linearGradient></defs><path d="M12 2L3 7l9 5 9-5-9-5z" fill="url(#sk3)" opacity="0.5"/><path d="M3 7v10l9 5V12L3 7z" fill="url(#sk3)" opacity="0.7"/><path d="M21 7v10l-9 5V12l9-5z" fill="url(#sk3)"/></svg>
               </div>
               <h3 class="text-base font-semibold">VR / AR 交互</h3>
               <p class="mt-2 text-sm text-slate-600 dark:text-slate-300">沉浸式界面与数字展厅交互体验设计。</p>
             </article>
-            <article data-animate data-delay="180" class="rounded-2xl border border-slate-200 bg-white/85 p-6 shadow-sm transition hover:-translate-y-1 hover:shadow-md dark:border-slate-700 dark:bg-slate-900/75">
-              <div class="mb-4 flex h-12 w-12 items-center justify-center rounded-xl bg-gradient-to-br from-sky-50 to-indigo-50 shadow-sm dark:from-sky-950/30 dark:to-indigo-950/30 dark:shadow-none dark:ring-1 dark:ring-white/10">
-                <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><defs><linearGradient id="sk4" x1="3" y1="3" x2="21" y2="21"><stop stop-color="#38bdf8"/><stop offset="1" stop-color="#6366f1"/></linearGradient></defs><rect x="3" y="13" width="4.5" height="8" rx="1.2" fill="url(#sk4)" opacity="0.5"/><rect x="9.75" y="8" width="4.5" height="13" rx="1.2" fill="url(#sk4)" opacity="0.75"/><rect x="16.5" y="3" width="4.5" height="18" rx="1.2" fill="url(#sk4)"/></svg>
+            <article data-animate data-delay="180" class="skill-card-glow glass-card rounded-2xl p-7 transition hover:-translate-y-2">
+              <div class="skill-icon-box mb-5 flex h-24 w-24 items-center justify-center rounded-2xl bg-gradient-to-br from-sky-50 to-indigo-50 shadow-md dark:from-sky-950/40 dark:to-indigo-950/40 dark:shadow-lg dark:shadow-indigo-500/10 dark:ring-1 dark:ring-white/10">
+                <svg width="48" height="48" viewBox="0 0 24 24" fill="none"><defs><linearGradient id="sk4" x1="3" y1="3" x2="21" y2="21"><stop stop-color="#38bdf8"/><stop offset="1" stop-color="#6366f1"/></linearGradient></defs><rect x="3" y="13" width="4.5" height="8" rx="1.2" fill="url(#sk4)" opacity="0.5"/><rect x="9.75" y="8" width="4.5" height="13" rx="1.2" fill="url(#sk4)" opacity="0.75"/><rect x="16.5" y="3" width="4.5" height="18" rx="1.2" fill="url(#sk4)"/></svg>
               </div>
               <h3 class="text-base font-semibold">数据可视化</h3>
               <p class="mt-2 text-sm text-slate-600 dark:text-slate-300">BI 看板、信息图表和复杂数据交互方案。</p>
             </article>
-            <article data-animate data-delay="240" class="rounded-2xl border border-slate-200 bg-white/85 p-6 shadow-sm transition hover:-translate-y-1 hover:shadow-md dark:border-slate-700 dark:bg-slate-900/75">
-              <div class="mb-4 flex h-12 w-12 items-center justify-center rounded-xl bg-gradient-to-br from-sky-50 to-indigo-50 shadow-sm dark:from-sky-950/30 dark:to-indigo-950/30 dark:shadow-none dark:ring-1 dark:ring-white/10">
-                <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><defs><linearGradient id="sk5" x1="2" y1="2" x2="22" y2="22"><stop stop-color="#38bdf8"/><stop offset="1" stop-color="#6366f1"/></linearGradient></defs><path d="M12 2L2 9l10 13L22 9 12 2z" fill="url(#sk5)"/><path d="M2 9h20" stroke="#fff" stroke-width="0.8" opacity="0.35"/><path d="M9 2l-7 7M15 2l7 7M12 9v13" stroke="#fff" stroke-width="0.6" opacity="0.2"/></svg>
+            <article data-animate data-delay="240" class="skill-card-glow glass-card rounded-2xl p-7 transition hover:-translate-y-2">
+              <div class="skill-icon-box mb-5 flex h-24 w-24 items-center justify-center rounded-2xl bg-gradient-to-br from-sky-50 to-indigo-50 shadow-md dark:from-sky-950/40 dark:to-indigo-950/40 dark:shadow-lg dark:shadow-indigo-500/10 dark:ring-1 dark:ring-white/10">
+                <svg width="48" height="48" viewBox="0 0 24 24" fill="none"><defs><linearGradient id="sk5" x1="2" y1="2" x2="22" y2="22"><stop stop-color="#38bdf8"/><stop offset="1" stop-color="#6366f1"/></linearGradient></defs><path d="M12 2L2 9l10 13L22 9 12 2z" fill="url(#sk5)"/><path d="M2 9h20" stroke="#fff" stroke-width="0.8" opacity="0.35"/><path d="M9 2l-7 7M15 2l7 7M12 9v13" stroke="#fff" stroke-width="0.6" opacity="0.2"/></svg>
               </div>
               <h3 class="text-base font-semibold">品牌视觉体系</h3>
               <p class="mt-2 text-sm text-slate-600 dark:text-slate-300">品牌规范、运营物料和视觉延展系统设计。</p>
             </article>
-            <article data-animate data-delay="300" class="rounded-2xl border border-slate-200 bg-white/85 p-6 shadow-sm transition hover:-translate-y-1 hover:shadow-md dark:border-slate-700 dark:bg-slate-900/75">
-              <div class="mb-4 flex h-12 w-12 items-center justify-center rounded-xl bg-gradient-to-br from-sky-50 to-indigo-50 shadow-sm dark:from-sky-950/30 dark:to-indigo-950/30 dark:shadow-none dark:ring-1 dark:ring-white/10">
-                <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><defs><linearGradient id="sk6" x1="2" y1="2" x2="22" y2="22"><stop stop-color="#38bdf8"/><stop offset="1" stop-color="#6366f1"/></linearGradient></defs><path d="M12 2l1.8 5.4L19.2 9l-5.4 1.8L12 16.2l-1.8-5.4L4.8 9l5.4-1.8L12 2z" fill="url(#sk6)"/><path d="M19 16l1 3 3 1-3 1-1 3-1-3-3-1 3-1 1-3z" fill="url(#sk6)" opacity="0.5"/><path d="M5 17l.6 1.8 1.8.6-1.8.6-.6 1.8-.6-1.8L2.6 19.4l1.8-.6L5 17z" fill="url(#sk6)" opacity="0.35"/></svg>
+            <article data-animate data-delay="300" class="skill-card-glow glass-card rounded-2xl p-7 transition hover:-translate-y-2">
+              <div class="skill-icon-box mb-5 flex h-24 w-24 items-center justify-center rounded-2xl bg-gradient-to-br from-sky-50 to-indigo-50 shadow-md dark:from-sky-950/40 dark:to-indigo-950/40 dark:shadow-lg dark:shadow-indigo-500/10 dark:ring-1 dark:ring-white/10">
+                <svg width="48" height="48" viewBox="0 0 24 24" fill="none"><defs><linearGradient id="sk6" x1="2" y1="2" x2="22" y2="22"><stop stop-color="#38bdf8"/><stop offset="1" stop-color="#6366f1"/></linearGradient></defs><path d="M12 2l1.8 5.4L19.2 9l-5.4 1.8L12 16.2l-1.8-5.4L4.8 9l5.4-1.8L12 2z" fill="url(#sk6)"/><path d="M19 16l1 3 3 1-3 1-1 3-1-3-3-1 3-1 1-3z" fill="url(#sk6)" opacity="0.5"/><path d="M5 17l.6 1.8 1.8.6-1.8.6-.6 1.8-.6-1.8L2.6 19.4l1.8-.6L5 17z" fill="url(#sk6)" opacity="0.35"/></svg>
               </div>
               <h3 class="text-base font-semibold">AI 辅助设计</h3>
               <p class="mt-2 text-sm text-slate-600 dark:text-slate-300">通过 AI 工具提效，快速迭代创意与设计交付。</p>
@@ -317,12 +360,12 @@
 
       <section id="contact" class="px-4 py-20 sm:px-6 lg:px-8">
         <div class="mx-auto max-w-4xl text-center">
-          <p data-animate class="text-xs font-semibold tracking-[0.3em] text-brand-600 dark:text-brand-200">CONTACT</p>
+          <p data-animate class="text-xs font-semibold tracking-[0.3em] text-brand-600 dark:text-brand-200">05</p>
           <h2 data-animate data-delay="80" class="mt-3 text-3xl font-bold sm:text-4xl">联系我</h2>
           <p data-animate data-delay="160" class="mx-auto mt-5 max-w-2xl text-slate-600 dark:text-slate-300">
             如果您对我的设计能力感兴趣，或有合作需求，欢迎随时联系。
           </p>
-          <a data-animate data-delay="240" href="mailto:hello@designer.com" class="mt-8 inline-flex rounded-full bg-brand-600 px-8 py-3 text-sm font-semibold text-white shadow-lg shadow-brand-500/30 transition hover:bg-brand-700">
+          <a data-animate data-delay="240" href="mailto:alice_wang_2018@163.com" class="mt-8 inline-flex rounded-full bg-brand-600 px-8 py-3 text-sm font-semibold text-white shadow-lg shadow-brand-500/30 transition hover:bg-brand-700">
             发送邮件
           </a>
         </div>
@@ -330,10 +373,10 @@
     </main>
 
     <footer class="border-t border-slate-200 px-4 py-8 text-center text-sm text-slate-500 dark:border-slate-800 dark:text-slate-400 sm:px-6 lg:px-8">
-      <p>&copy; 2026 UI Designer Portfolio. All rights reserved.</p>
+      <p>&copy; 2026 UI 设计师作品集 · 用心设计每一个细节</p>
     </footer>
 
-    <button id="themeToggle" aria-label="Toggle theme" class="magnetic fixed bottom-6 right-6 z-50 inline-flex h-12 w-12 items-center justify-center rounded-full border border-slate-300 bg-white/90 text-slate-700 shadow-lg backdrop-blur transition dark:border-slate-700 dark:bg-slate-900/90 dark:text-slate-100">
+    <button id="themeToggle" aria-label="Toggle theme" class="magnetic fixed top-5 right-5 z-50 inline-flex h-10 w-10 items-center justify-center rounded-full border border-slate-300/50 bg-white/80 text-slate-600 backdrop-blur-md transition hover:bg-white dark:border-white/10 dark:bg-white/5 dark:text-slate-300 dark:hover:bg-white/10">
       <svg class="icon-moon h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
         <path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"></path>
       </svg>
@@ -390,14 +433,13 @@
   <!-- Hero Section -->
   <section class="hero" id="hero">
     <div class="hero-content">
-      <div class="hero-badge" data-animate="fade-up">UI / 视觉设计师</div>
-      <h1 class="hero-title" data-animate="fade-up" data-delay="100">
-        <span class="hero-line">创造极致</span>
-        <span class="hero-line gradient-text">数字体验</span>
+      <div class="hero-badge" data-animate="fade-up">UI / UX 设计师</div>
+      <h1 class="hero-title hero-title-main" data-animate="fade-up" data-delay="100">
+        <span class="hero-line">深耕设计</span>
+        <span class="hero-line gradient-text">驱动价值</span>
       </h1>
       <p class="hero-desc" data-animate="fade-up" data-delay="200">
-        13+ 年设计经验 · 跨领域全流程设计能力<br>
-        工业软件 / VR交互 / 数据可视化 / 移动端产品
+        专注 UI/UX 设计方向，参与过 B 端、C 端及 VR/AR 等多类产品项目，具备界面设计、体验优化与方案落地能力。熟悉设计体系搭建与规范沉淀，能够结合 AI 辅助设计提升效率，并协同产品、研发等团队推动方案落地。以用户体验为核心，助力业务转化。
       </p>
       <div class="hero-actions" data-animate="fade-up" data-delay="300">
         <a href="#experience" class="btn btn-primary">查看经历</a>
@@ -405,16 +447,16 @@
       </div>
       <div class="hero-stats" data-animate="fade-up" data-delay="400">
         <div class="stat">
-          <span class="stat-num" data-count="13">0</span><span class="stat-plus">+</span>
-          <span class="stat-label">年设计经验</span>
+          <span class="stat-num" style="font-size:20px;-webkit-text-fill-color:initial;background:none;">多年深耕</span>
+          <span class="stat-label">持续积累设计经验</span>
         </div>
         <div class="stat">
-          <span class="stat-num" data-count="6">0</span><span class="stat-plus">+</span>
-          <span class="stat-label">行业领域</span>
+          <span class="stat-num" style="font-size:20px;-webkit-text-fill-color:initial;background:none;">跨领域覆盖</span>
+          <span class="stat-label">涉猎多个行业方向</span>
         </div>
         <div class="stat">
-          <span class="stat-num" data-count="50">0</span><span class="stat-plus">+</span>
-          <span class="stat-label">项目交付</span>
+          <span class="stat-num" style="font-size:20px;-webkit-text-fill-color:initial;background:none;">实战驱动</span>
+          <span class="stat-label">丰富的项目落地经历</span>
         </div>
       </div>
     </div>
@@ -993,7 +1035,7 @@
         <p class="contact-desc">
           如果您对我的设计能力感兴趣，或有合作需求，欢迎随时联系。
         </p>
-        <a href="mailto:hello@designer.com" class="btn btn-primary btn-lg">发送邮件</a>
+        <a href="mailto:alice_wang_2018@163.com" class="btn btn-primary btn-lg">发送邮件</a>
       </div>
     </div>
   </section>
