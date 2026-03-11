@@ -185,15 +185,15 @@ html.dark #themeToggle .icon-moon {
 }
 
 html.dark .aurora-blob:nth-child(1) {
-  background: radial-gradient(circle, rgba(99,102,241,0.28), transparent 70%);
+  background: radial-gradient(circle, rgba(99,102,241,0.12), transparent 70%);
 }
 
 html.dark .aurora-blob:nth-child(2) {
-  background: radial-gradient(circle, rgba(6,182,212,0.22), transparent 70%);
+  background: radial-gradient(circle, rgba(6,182,212,0.1), transparent 70%);
 }
 
 html.dark .aurora-blob:nth-child(3) {
-  background: radial-gradient(circle, rgba(167,139,250,0.2), transparent 70%);
+  background: radial-gradient(circle, rgba(167,139,250,0.08), transparent 70%);
 }
 
 @keyframes auroraMove {
@@ -352,18 +352,23 @@ html.dark .marquee-track .dot {
 }
 
 html.dark .hero-bg-image {
-  opacity: 0.45;
+  opacity: 0.75;
 }
 
 /* =========== Hero Stat Frosted Glass Cards =========== */
 .hero-stat-card {
-  background: rgba(255, 255, 255, 0.08);
-  border: 1px solid rgba(255, 255, 255, 0.15);
-  backdrop-filter: blur(20px) saturate(150%);
-  -webkit-backdrop-filter: blur(20px) saturate(150%);
+  background: linear-gradient(
+    135deg,
+    rgba(255, 255, 255, 0.15) 0%,
+    rgba(255, 255, 255, 0.05) 100%
+  );
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  backdrop-filter: blur(24px) saturate(180%);
+  -webkit-backdrop-filter: blur(24px) saturate(180%);
   box-shadow:
-    0 4px 24px rgba(0, 0, 0, 0.15),
-    inset 0 1px 0 rgba(255, 255, 255, 0.12);
+    0 8px 32px rgba(0, 0, 0, 0.18),
+    inset 0 1px 0 rgba(255, 255, 255, 0.2),
+    inset 0 -1px 0 rgba(255, 255, 255, 0.05);
   transition: transform 0.35s cubic-bezier(0.2, 0.8, 0.2, 1),
               box-shadow 0.35s ease,
               background 0.35s ease,
@@ -371,12 +376,17 @@ html.dark .hero-bg-image {
 }
 
 .hero-stat-card:hover {
-  background: rgba(255, 255, 255, 0.14);
-  border-color: rgba(255, 255, 255, 0.25);
+  background: linear-gradient(
+    135deg,
+    rgba(255, 255, 255, 0.22) 0%,
+    rgba(255, 255, 255, 0.08) 100%
+  );
+  border-color: rgba(255, 255, 255, 0.35);
   box-shadow:
-    0 12px 40px rgba(0, 0, 0, 0.2),
-    0 0 20px rgba(99, 102, 241, 0.08),
-    inset 0 1px 0 rgba(255, 255, 255, 0.18);
+    0 16px 48px rgba(0, 0, 0, 0.22),
+    0 0 24px rgba(99, 102, 241, 0.1),
+    inset 0 1px 0 rgba(255, 255, 255, 0.3),
+    inset 0 -1px 0 rgba(255, 255, 255, 0.08);
 }
 
 /* =========== Dynamic Hero Background Canvas =========== */
@@ -392,7 +402,7 @@ html.dark .hero-bg-image {
 }
 
 html.dark .hero-bg-canvas {
-  opacity: 0.35;
+  opacity: 0.15;
 }
 
 .section-bg {
@@ -429,7 +439,7 @@ html.dark .section-bg {
 }
 
 html.dark .hero-wave {
-  opacity: 0.65;
+  opacity: 0.3;
 }
 
 .hero-wave-1 {
@@ -578,10 +588,11 @@ html.dark .hero-wave {
 
 /* =========== Hero Title Style =========== */
 .hero-title-main {
-  font-family: 'Sora', 'Noto Sans SC', sans-serif;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', 'Helvetica Neue', Helvetica, Arial, sans-serif;
   font-weight: 900;
   letter-spacing: 0.04em;
   line-height: 1.12;
+  -webkit-text-stroke: 1.5px currentColor;
 }
 
 html.dark .hero-title-main {
@@ -904,7 +915,7 @@ html.dark .about-ability-card:hover {
   --radius: 16px;
   --radius-sm: 8px;
   --transition: 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-  --font-sans: 'Inter', 'Noto Sans SC', -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-sans: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', 'Helvetica Neue', Helvetica, Arial, sans-serif;
 }
 
 /* ========================================
@@ -1194,7 +1205,7 @@ img { max-width: 100%; display: block; }
 
 .section-tag {
   display: inline-block;
-  font-size: 11px;
+  font-size: 12px;
   font-weight: 600;
   letter-spacing: 4px;
   color: var(--accent-2);
@@ -1275,12 +1286,12 @@ img { max-width: 100%; display: block; }
 .hero-badge {
   display: inline-block;
   padding: 8px 20px;
-  background: rgba(99, 102, 241, 0.08);
-  border: 1px solid rgba(99, 102, 241, 0.18);
+  background: rgba(99, 102, 241, 0.15);
+  border: 1px solid rgba(99, 102, 241, 0.4);
   border-radius: 50px;
   font-size: 13px;
-  font-weight: 500;
-  color: var(--accent-2);
+  font-weight: 600;
+  color: #c7d2fe;
   letter-spacing: 2px;
   margin-bottom: 32px;
 }
@@ -1367,7 +1378,7 @@ img { max-width: 100%; display: block; }
 }
 
 .scroll-hint span {
-  font-size: 10px;
+  font-size: 12px;
   letter-spacing: 3px;
   color: var(--text-muted);
 }
@@ -1621,7 +1632,7 @@ img { max-width: 100%; display: block; }
 
 .tag {
   padding: 4px 14px;
-  font-size: 11px;
+  font-size: 12px;
   font-weight: 500;
   color: var(--accent-2);
   background: rgba(99, 102, 241, 0.08);
@@ -1773,7 +1784,7 @@ img { max-width: 100%; display: block; }
 .portfolio-tag {
   display: inline-block;
   padding: 3px 12px;
-  font-size: 11px;
+  font-size: 12px;
   font-weight: 500;
   color: var(--accent-3);
   background: rgba(6, 182, 212, 0.08);
