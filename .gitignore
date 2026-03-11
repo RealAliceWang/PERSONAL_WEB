@@ -2,3 +2,8 @@
 *.DS_Store
 .cursor/
 assets/backup/
+node_modules/
+input.css
+tailwind.config.js
+package.json
+package-lock.json
