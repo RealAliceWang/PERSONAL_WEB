@@ -320,7 +320,7 @@ html.dark .marquee-band {
 }
 
 html.dark .marquee-track span {
-  -webkit-text-stroke-color: rgba(129,140,248,0.18);
+  -webkit-text-stroke-color: rgba(129,140,248,0.4);
 }
 
 .marquee-track .dot {
@@ -330,7 +330,7 @@ html.dark .marquee-track span {
 }
 
 html.dark .marquee-track .dot {
-  color: rgba(129,140,248,0.25);
+  color: rgba(129,140,248,0.45);
 }
 
 @keyframes marqueeScroll {
