@@ -247,6 +247,12 @@ const counterObserver = new IntersectionObserver(
 
 document.querySelectorAll("[data-count]").forEach((c) => counterObserver.observe(c));
 
+// On page load, always start from the top (ignore URL hash)
+if (window.location.hash) {
+  history.replaceState(null, "", window.location.pathname);
+  window.scrollTo(0, 0);
+}
+
 // Smooth anchor scrolling (Lenis-aware)
 document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
   const targetId = anchor.getAttribute("href");
