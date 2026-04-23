@@ -1,9 +1,15 @@
 .DS_Store
 *.DS_Store
 .cursor/
+.vscode/
 assets/backup/
 node_modules/
 input.css
 tailwind.config.js
 package.json
 package-lock.json
+
+# Personal / local-only files
+job_checks/
+王娜-UI设计师简历.md
+王娜-UI设计师简历.pdf
