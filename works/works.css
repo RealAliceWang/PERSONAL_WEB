@@ -1,0 +1,155 @@
+/* Base reset */
+*, *::before, *::after { box-sizing: border-box; }
+html { -webkit-text-size-adjust: 100%; }
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC",
+    "Hiragino Sans GB", "Microsoft YaHei", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  background: #ffffff;
+  color: #0f172a;
+}
+body.dark, .dark body { background: #050508; color: #f1f5f9; }
+img { max-width: 100%; display: block; }
+a { color: inherit; text-decoration: none; }
+
+/* Back button (top-left) */
+.back-btn {
+  position: fixed;
+  top: 20px;
+  left: 20px;
+  z-index: 50;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 8px 16px;
+  font-size: 12px;
+  font-weight: 500;
+  color: #334155;
+  background: rgba(255, 255, 255, 0.8);
+  border: 1px solid #e2e8f0;
+  border-radius: 9999px;
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  transition: background-color .2s ease, color .2s ease, border-color .2s ease;
+}
+.back-btn:hover { background: #ffffff; }
+.dark .back-btn {
+  color: #ffffff;
+  background: rgba(0, 0, 0, 0.3);
+  border-color: rgba(255, 255, 255, 0.15);
+}
+.dark .back-btn:hover { background: rgba(0, 0, 0, 0.5); }
+.back-btn svg { width: 14px; height: 14px; }
+
+/* Main content */
+main.work-main {
+  max-width: 1152px;
+  margin: 0 auto;
+  padding: 80px 20px 64px;
+}
+@media (min-width: 640px) {
+  main.work-main { padding-left: 32px; padding-right: 32px; }
+}
+
+/* Gallery image */
+.gallery-img {
+  border-radius: 12px;
+  overflow: hidden;
+  cursor: zoom-in;
+  transition: transform .35s cubic-bezier(.2,.8,.2,1), box-shadow .35s ease;
+}
+.gallery-img:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 24px 60px rgba(0, 0, 0, .15);
+}
+.dark .gallery-img:hover { box-shadow: 0 24px 60px rgba(0, 0, 0, .5); }
+.gallery-img img { width: 100%; display: block; }
+
+/* Footer (next project) */
+.work-footer { border-top: 1px solid #e2e8f0; }
+.dark .work-footer { border-top-color: rgba(255, 255, 255, 0.04); }
+.work-footer-link {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 40px 20px;
+  transition: background-color .2s ease;
+}
+.work-footer-link:hover { background: #f8fafc; }
+.dark .work-footer-link:hover { background: rgba(255, 255, 255, 0.02); }
+@media (min-width: 640px) {
+  .work-footer-link { padding-left: 32px; padding-right: 32px; }
+}
+.work-footer-eyebrow {
+  margin: 0;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 4px;
+  text-transform: uppercase;
+  color: #94a3b8;
+}
+.work-footer-title {
+  margin: 8px 0 0;
+  font-size: 20px;
+  font-weight: 700;
+}
+@media (min-width: 640px) {
+  .work-footer-title { font-size: 24px; }
+}
+.work-footer-arrow {
+  width: 24px;
+  height: 24px;
+  color: #94a3b8;
+  transition: transform .2s ease, color .2s ease;
+  flex-shrink: 0;
+}
+.work-footer-link:hover .work-footer-arrow {
+  transform: translateX(4px);
+  color: #6366f1;
+}
+
+/* Lightbox */
+.lightbox {
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(0, 0, 0, 0.92);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity .3s ease;
+  cursor: zoom-out;
+}
+.lightbox.active { opacity: 1; pointer-events: all; }
+.lightbox img {
+  max-width: 92vw;
+  max-height: 92vh;
+  object-fit: contain;
+  border-radius: 8px;
+  transform: scale(.95);
+  transition: transform .35s cubic-bezier(.2,.8,.2,1);
+}
+.lightbox.active img { transform: scale(1); }
+.lightbox-close {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  background: rgba(255, 255, 255, 0.08);
+  color: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: background .2s ease;
+}
+.lightbox-close:hover { background: rgba(255, 255, 255, 0.15); }
+.lightbox-close svg { width: 18px; height: 18px; }

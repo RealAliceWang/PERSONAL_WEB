@@ -1,25 +1,11 @@
 <!DOCTYPE html>
-<html lang="zh-CN" class="scroll-smooth">
+<html lang="zh-CN">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>小汤山小程序 | Portfolio</title>
-  <script src="https://cdn.tailwindcss.com"></script>
-  <script>tailwind.config={darkMode:"class",theme:{extend:{fontFamily:{sans:["-apple-system","BlinkMacSystemFont","Segoe UI","PingFang SC","Hiragino Sans GB","Microsoft YaHei","Helvetica Neue","Helvetica","Arial","sans-serif"]},colors:{brand:{50:"#eef2ff",100:"#e0e7ff",200:"#c7d2fe",300:"#a5b4fc",400:"#818cf8",500:"#6366f1",600:"#4f46e5",700:"#4338ca"}}}}}</script>
+  <title>平面设计作品合集 | Portfolio</title>
+  <link rel="stylesheet" href="works.css">
   <script>if(localStorage.getItem('theme')==='dark')document.documentElement.classList.add('dark')</script>
-  <style>
-    body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","PingFang SC","Hiragino Sans GB","Microsoft YaHei","Helvetica Neue",Helvetica,Arial,sans-serif}
-    .gallery-img{border-radius:12px;overflow:hidden;cursor:zoom-in;transition:transform .35s cubic-bezier(.2,.8,.2,1),box-shadow .35s ease}
-    .gallery-img:hover{transform:translateY(-4px);box-shadow:0 24px 60px rgba(0,0,0,.15)}
-    .dark .gallery-img:hover{box-shadow:0 24px 60px rgba(0,0,0,.5)}
-    .gallery-img img{width:100%;display:block}
-    .lightbox{position:fixed;inset:0;z-index:9999;display:flex;align-items:center;justify-content:center;background:rgba(0,0,0,.92);backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);opacity:0;pointer-events:none;transition:opacity .3s ease;cursor:zoom-out}
-    .lightbox.active{opacity:1;pointer-events:all}
-    .lightbox img{max-width:92vw;max-height:92vh;object-fit:contain;border-radius:8px;transform:scale(.95);transition:transform .35s cubic-bezier(.2,.8,.2,1)}
-    .lightbox.active img{transform:scale(1)}
-    .lightbox-close{position:absolute;top:20px;right:20px;width:40px;height:40px;border-radius:50%;border:1px solid rgba(255,255,255,.15);background:rgba(255,255,255,.08);color:#fff;display:flex;align-items:center;justify-content:center;cursor:pointer;transition:background .2s}
-    .lightbox-close:hover{background:rgba(255,255,255,.15)}
-  </style>
   <script>
   var _hmt = _hmt || [];
   (function() {
@@ -30,30 +16,30 @@
   })();
   </script>
 </head>
-<body class="bg-white text-slate-900 dark:bg-[#050508] dark:text-slate-100">
-  <a href="../index.html#portfolio" class="fixed left-5 top-5 z-50 flex items-center gap-1.5 rounded-full border border-slate-200 bg-white/80 px-4 py-2 text-xs font-medium text-slate-700 backdrop-blur-md transition hover:bg-white dark:border-white/15 dark:bg-black/30 dark:text-white dark:hover:bg-black/50">
-    <svg class="h-3.5 w-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>返回
+<body>
+  <a href="../index.html#portfolio" class="back-btn">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>返回
   </a>
 
-  <main class="mx-auto max-w-6xl px-5 pt-20 pb-16 sm:px-8">
+  <main class="work-main">
     <div class="gallery-img" onclick="openLightbox(this)">
-      <img src="../assets/8.jpg" alt="小汤山小程序">
+      <img src="../assets/8.jpg" alt="平面设计作品合集">
     </div>
   </main>
 
-  <footer class="border-t border-slate-200 dark:border-white/[0.04]">
-    <a href="../index.html#portfolio" class="group flex items-center justify-between px-5 py-10 transition hover:bg-slate-50 dark:hover:bg-white/[0.02] sm:px-8">
+  <footer class="work-footer">
+    <a href="../index.html#portfolio" class="work-footer-link">
       <div>
-        <p class="text-xs font-semibold uppercase tracking-[4px] text-slate-400">查看全部项目</p>
-        <p class="mt-2 text-xl font-bold sm:text-2xl">返回作品集</p>
+        <p class="work-footer-eyebrow">查看全部项目</p>
+        <p class="work-footer-title">返回作品集</p>
       </div>
-      <svg class="h-6 w-6 text-slate-400 transition group-hover:translate-x-1 group-hover:text-brand-500" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+      <svg class="work-footer-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
     </a>
   </footer>
 
   <div class="lightbox" id="lightbox" onclick="closeLightbox(event)">
     <button class="lightbox-close" onclick="closeLightbox(event)" aria-label="Close">
-      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 6L6 18M6 6l12 12"/></svg>
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 6L6 18M6 6l12 12"/></svg>
     </button>
     <img id="lightboxImg" src="" alt="">
   </div>
