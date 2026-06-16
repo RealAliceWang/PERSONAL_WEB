@@ -1,155 +1,101 @@
-/* Base reset */
+/* ============================================================
+   作品详情页 — Dark Premium 风格（与首页统一）
+   ============================================================ */
+:root {
+  --bg: #060a1c;
+  --bg-2: #0a1130;
+  --surface: rgba(120, 150, 255, 0.05);
+  --border: rgba(150, 180, 255, 0.12);
+  --border-str: rgba(150, 180, 255, 0.24);
+  --text: #eef2ff;
+  --text-40: rgba(214, 224, 255, 0.42);
+  --grad: linear-gradient(120deg, #8b5cff, #4d8cff 55%, #38d6ff);
+  --ease: cubic-bezier(0.22, 0.61, 0.36, 1);
+}
+
 *, *::before, *::after { box-sizing: border-box; }
-html { -webkit-text-size-adjust: 100%; }
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC",
-    "Hiragino Sans GB", "Microsoft YaHei", "Helvetica Neue", Helvetica, Arial, sans-serif;
-  line-height: 1.5;
-  background: #ffffff;
-  color: #0f172a;
+  background: var(--bg);
+  color: var(--text);
+  font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI",
+    "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Helvetica Neue", Arial, sans-serif;
+  line-height: 1.55;
+  -webkit-font-smoothing: antialiased;
 }
-body.dark, .dark body { background: #050508; color: #f1f5f9; }
+/* 兼容历史 dark 主题缓存 */
+.dark body, body.dark { background: var(--bg); color: var(--text); }
 img { max-width: 100%; display: block; }
 a { color: inherit; text-decoration: none; }
+::selection { background: rgba(124, 92, 255, .4); color: #fff; }
 
-/* Back button (top-left) */
+/* 背景辉光 — 深邃蓝调氛围 */
+body::before {
+  content: ""; position: fixed; inset: 0; z-index: -1; pointer-events: none;
+  background:
+    radial-gradient(120% 70% at 50% -8%, #1a2c66 0%, #0d1640 32%, #060a1c 70%),
+    radial-gradient(40vw 40vw at 12% -4%, rgba(124,92,255,.26), transparent 70%),
+    radial-gradient(40vw 40vw at 92% 6%, rgba(56,140,255,.22), transparent 70%);
+}
+
+/* 返回按钮 */
 .back-btn {
-  position: fixed;
-  top: 20px;
-  left: 20px;
-  z-index: 50;
-  display: inline-flex;
-  align-items: center;
-  gap: 6px;
-  padding: 8px 16px;
-  font-size: 12px;
-  font-weight: 500;
-  color: #334155;
-  background: rgba(255, 255, 255, 0.8);
-  border: 1px solid #e2e8f0;
-  border-radius: 9999px;
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
-  transition: background-color .2s ease, color .2s ease, border-color .2s ease;
+  position: fixed; top: 22px; left: 22px; z-index: 50;
+  display: inline-flex; align-items: center; gap: 8px;
+  padding: 11px 20px; font-size: 13px; font-weight: 600; color: var(--text);
+  background: rgba(10,17,48,.6);
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  backdrop-filter: blur(14px); -webkit-backdrop-filter: blur(14px);
+  transition: border-color .2s, transform .2s, background .2s;
 }
-.back-btn:hover { background: #ffffff; }
-.dark .back-btn {
-  color: #ffffff;
-  background: rgba(0, 0, 0, 0.3);
-  border-color: rgba(255, 255, 255, 0.15);
-}
-.dark .back-btn:hover { background: rgba(0, 0, 0, 0.5); }
-.back-btn svg { width: 14px; height: 14px; }
+.back-btn:hover { border-color: var(--border-str); transform: translateX(-3px); background: rgba(10,17,48,.85); }
+.back-btn svg { width: 15px; height: 15px; }
 
-/* Main content */
-main.work-main {
-  max-width: 1152px;
-  margin: 0 auto;
-  padding: 80px 20px 64px;
-}
-@media (min-width: 640px) {
-  main.work-main { padding-left: 32px; padding-right: 32px; }
-}
+/* 主内容 */
+main.work-main { max-width: 1100px; margin: 0 auto; padding: 100px 20px 64px; }
+@media (min-width: 640px) { main.work-main { padding-inline: 32px; } }
 
-/* Gallery image */
 .gallery-img {
-  border-radius: 12px;
-  overflow: hidden;
-  cursor: zoom-in;
-  transition: transform .35s cubic-bezier(.2,.8,.2,1), box-shadow .35s ease;
+  border-radius: 16px; overflow: hidden; cursor: zoom-in;
+  border: 1px solid var(--border);
+  transition: transform .4s var(--ease), box-shadow .4s ease, border-color .3s;
 }
-.gallery-img:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 24px 60px rgba(0, 0, 0, .15);
-}
-.dark .gallery-img:hover { box-shadow: 0 24px 60px rgba(0, 0, 0, .5); }
-.gallery-img img { width: 100%; display: block; }
+.gallery-img:hover { transform: translateY(-5px); box-shadow: 0 40px 90px rgba(0,0,0,.6); border-color: var(--border-str); }
+.gallery-img img { width: 100%; }
 
-/* Footer (next project) */
-.work-footer { border-top: 1px solid #e2e8f0; }
-.dark .work-footer { border-top-color: rgba(255, 255, 255, 0.04); }
+/* 下一个项目 */
+.work-footer { border-top: 1px solid var(--border); margin-top: 24px; }
 .work-footer-link {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 40px 20px;
-  transition: background-color .2s ease;
+  max-width: 1100px; margin: 0 auto;
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 52px 20px; transition: padding-left .3s var(--ease);
 }
-.work-footer-link:hover { background: #f8fafc; }
-.dark .work-footer-link:hover { background: rgba(255, 255, 255, 0.02); }
-@media (min-width: 640px) {
-  .work-footer-link { padding-left: 32px; padding-right: 32px; }
-}
+.work-footer-link:hover { padding-left: 40px; }
+@media (min-width: 640px) { .work-footer-link { padding-inline: 32px; } }
 .work-footer-eyebrow {
-  margin: 0;
-  font-size: 12px;
-  font-weight: 600;
-  letter-spacing: 4px;
-  text-transform: uppercase;
-  color: #94a3b8;
+  margin: 0; font-size: 12px; font-weight: 600; letter-spacing: .18em; text-transform: uppercase;
+  background: var(--grad); -webkit-background-clip: text; background-clip: text; color: transparent;
 }
-.work-footer-title {
-  margin: 8px 0 0;
-  font-size: 20px;
-  font-weight: 700;
-}
-@media (min-width: 640px) {
-  .work-footer-title { font-size: 24px; }
-}
-.work-footer-arrow {
-  width: 24px;
-  height: 24px;
-  color: #94a3b8;
-  transition: transform .2s ease, color .2s ease;
-  flex-shrink: 0;
-}
-.work-footer-link:hover .work-footer-arrow {
-  transform: translateX(4px);
-  color: #6366f1;
-}
+.work-footer-title { margin: 12px 0 0; font-size: clamp(22px, 3vw, 34px); font-weight: 800; letter-spacing: -.02em; }
+.work-footer-arrow { width: 30px; height: 30px; color: var(--text-40); flex-shrink: 0; transition: transform .3s var(--ease), color .2s; }
+.work-footer-link:hover .work-footer-arrow { transform: translateX(8px); color: #7cc8ff; }
 
-/* Lightbox */
+/* 灯箱 */
 .lightbox {
-  position: fixed;
-  inset: 0;
-  z-index: 9999;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background: rgba(0, 0, 0, 0.92);
-  backdrop-filter: blur(20px);
-  -webkit-backdrop-filter: blur(20px);
-  opacity: 0;
-  pointer-events: none;
-  transition: opacity .3s ease;
-  cursor: zoom-out;
+  position: fixed; inset: 0; z-index: 9999;
+  display: flex; align-items: center; justify-content: center;
+  background: rgba(5,9,24,.95);
+  backdrop-filter: blur(18px); -webkit-backdrop-filter: blur(18px);
+  opacity: 0; pointer-events: none; transition: opacity .3s ease; cursor: zoom-out;
 }
 .lightbox.active { opacity: 1; pointer-events: all; }
-.lightbox img {
-  max-width: 92vw;
-  max-height: 92vh;
-  object-fit: contain;
-  border-radius: 8px;
-  transform: scale(.95);
-  transition: transform .35s cubic-bezier(.2,.8,.2,1);
-}
+.lightbox img { max-width: 92vw; max-height: 92vh; object-fit: contain; border-radius: 8px; transform: scale(.96); transition: transform .35s var(--ease); }
 .lightbox.active img { transform: scale(1); }
 .lightbox-close {
-  position: absolute;
-  top: 20px;
-  right: 20px;
-  width: 40px;
-  height: 40px;
-  border-radius: 50%;
-  border: 1px solid rgba(255, 255, 255, 0.15);
-  background: rgba(255, 255, 255, 0.08);
-  color: #ffffff;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  cursor: pointer;
-  transition: background .2s ease;
+  position: absolute; top: 22px; right: 22px; width: 46px; height: 46px; border-radius: 50%;
+  border: 1px solid var(--border-str); background: rgba(255,255,255,.08); color: #fff;
+  display: flex; align-items: center; justify-content: center; cursor: pointer; transition: background .2s;
 }
-.lightbox-close:hover { background: rgba(255, 255, 255, 0.15); }
+.lightbox-close:hover { background: rgba(255,255,255,.18); }
 .lightbox-close svg { width: 18px; height: 18px; }
