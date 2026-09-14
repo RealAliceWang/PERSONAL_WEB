@@ -49,7 +49,7 @@ window.addEventListener("scroll", () => {
     requestAnimationFrame(loop);
   })();
 
-  const hoverSel = "a, button, .filter-btn, .work-card, .magnetic, [role='button']";
+  const hoverSel = "a, button, .work-card, .magnetic, [role='button']";
   document.addEventListener("mouseover", (e) => {
     if (e.target.closest(hoverSel)) { dot.classList.add("hovering"); ring.classList.add("hovering"); }
   });
@@ -130,20 +130,6 @@ const counterObserver = new IntersectionObserver((entries) => {
   });
 }, { threshold: 0.6 });
 document.querySelectorAll("[data-count]").forEach((c) => counterObserver.observe(c));
-
-// 作品筛选
-const filterButtons = document.querySelectorAll(".filter-btn");
-const workCards = document.querySelectorAll(".work-card");
-filterButtons.forEach((btn) => {
-  btn.addEventListener("click", () => {
-    const filter = btn.dataset.filter || "all";
-    filterButtons.forEach((b) => (b.dataset.active = b === btn ? "true" : "false"));
-    workCards.forEach((card) => {
-      const cat = card.dataset.category || "";
-      card.classList.toggle("is-hidden", filter !== "all" && filter !== cat);
-    });
-  });
-});
 
 // Lenis 平滑滚动
 (function initLenis() {
