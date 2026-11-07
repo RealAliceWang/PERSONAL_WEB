@@ -556,7 +556,7 @@ html:not(.has-cursor) .cursor-dot, html:not(.has-cursor) .cursor-ring { display:
 /* ---------- Contact ---------- */
 .contact { text-align: center; position: relative; }
 .contact__glow { position: absolute; left: 50%; top: 40%; transform: translate(-50%,-50%); width: 70vw; max-width: 780px; aspect-ratio: 1; background: radial-gradient(circle, rgba(77,140,255,.34), transparent 60%); filter: blur(46px); z-index: -1; }
-.contact__big { font-size: clamp(15px, 3.2vw, 44px); font-weight: 850; letter-spacing: -.03em; line-height: 1.08; margin: 24px 0 32px; }
+.contact__big { font-size: clamp(28px, 5vw, 64px); font-weight: 850; letter-spacing: .02em; line-height: 1.08; margin: 24px 0 32px; }
 .contact__big a, .contact__big span { background: var(--grad-text); -webkit-background-clip: text; background-clip: text; color: transparent; background-size: 200% auto; animation: shine 6s linear infinite; }
 .contact__sub { color: var(--text-60); max-width: none; white-space: nowrap; margin: 28px auto 36px; }
 .contact__links { display: flex; flex-wrap: wrap; gap: 14px; justify-content: center; }
