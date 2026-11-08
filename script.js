@@ -11,6 +11,13 @@ const markLoaded = () => document.documentElement.classList.add("is-loaded");
 window.addEventListener("load", markLoaded);
 document.addEventListener("DOMContentLoaded", () => requestAnimationFrame(markLoaded));
 
+// Block right-click save and drag-out on images
+["contextmenu", "dragstart"].forEach((type) =>
+  document.addEventListener(type, (e) => {
+    if (e.target.tagName === "IMG") e.preventDefault();
+  })
+);
+
 // 滚动进度条
 const progress = document.getElementById("progress");
 function updateProgress() {

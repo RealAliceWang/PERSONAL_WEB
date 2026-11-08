@@ -48,6 +48,8 @@
     function openLightbox(el){const img=el.querySelector('img');if(!img)return;document.getElementById('lightboxImg').src=img.src;document.getElementById('lightbox').classList.add('active');document.body.style.overflow='hidden'}
     function closeLightbox(e){if(e.target.tagName==='IMG'&&e.target.id==='lightboxImg')return;document.getElementById('lightbox').classList.remove('active');document.body.style.overflow=''}
     document.addEventListener('keydown',e=>{if(e.key==='Escape')closeLightbox(e)});
+    // Block right-click save and drag-out on images
+    ['contextmenu','dragstart'].forEach(t=>document.addEventListener(t,e=>{if(e.target.tagName==='IMG')e.preventDefault()}));
   </script>
 </body>
 </html>

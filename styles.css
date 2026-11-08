@@ -607,3 +607,6 @@ html:not(.has-cursor) .cursor-dot, html:not(.has-cursor) .cursor-ring { display:
   .hero__title .line > span { transform: none; opacity: 1; }
   .hero__glass { animation: none; }
 }
+
+/* Prevent image drag / long-press save */
+img { -webkit-user-drag: none; user-select: none; -webkit-user-select: none; -webkit-touch-callout: none; }
